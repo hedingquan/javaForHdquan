@@ -1,0 +1,19 @@
+1556093797595	Extract local variable 'build'
+1556095616164	Extract local variable 'session'
+1556096006085	Extract local variable 'sqlSession'
+1556096613072	Delete elements
+1556096809488	Rename resource 'AccountMapper.xml'
+1556097363867	Delete element
+1556097468579	Extract local variable 'session'
+1556097529979	Extract local variable 'mapper'
+1556097944648	Extract local variable 'ins'
+1556098069429	Delete element
+1556100140362	Delete element
+1556105082428	Copy file
+1556105086562	Delete element
+1556107835220	Delete element
+1556109581259	Delete elements
+1556109955253	Delete element
+1556110757970	Copy packages
+1556110776118	Copy files
+1556110852675	Copy files

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;jstl.jar&apos; to &apos;lib&apos;&#x0D;&#x0A;- Original project: &apos;register&apos;&#x0D;&#x0A;- Destination element: &apos;lib&apos;&#x0D;&#x0A;- Original element: &apos;jstl.jar&apos;" description="Copy file" element1="WebRoot/WEB-INF/lib/jstl.jar" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1573365182521" target="/Campus_part-time_job_system/WebRoot/WEB-INF/lib" units="0" version="1.0"/>
+</session>

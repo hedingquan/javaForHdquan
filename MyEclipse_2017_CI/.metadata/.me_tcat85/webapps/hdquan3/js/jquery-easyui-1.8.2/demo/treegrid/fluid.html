@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Fluid TreeGrid - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"63900",secure:"63905"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
+<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-265" data-genuitec-path="/hdquan3/WebRoot/js/jquery-easyui-1.8.2/demo/treegrid/fluid.html">
+	<h2 data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-265" data-genuitec-path="/hdquan3/WebRoot/js/jquery-easyui-1.8.2/demo/treegrid/fluid.html">Fluid TreeGrid</h2>
+	<p>This example shows how to assign percentage width to a column in TreeGrid.</p>
+	<div style="margin:20px 0;"></div>
+	<table title="Fluid Browser" class="easyui-treegrid" style="width:700px;height:250px"
+			data-options="
+				url: 'treegrid_data1.json',
+				method: 'get',
+				idField: 'id',
+				treeField: 'name'
+			">
+		<thead>
+			<tr>
+				<th data-options="field:'name'" width="50%">Name(50%)</th>
+				<th data-options="field:'size'" width="20%" align="right">Size(20%)</th>
+				<th data-options="field:'date'" width="30%">Modified Date(30%)</th>
+			</tr>
+		</thead>
+	</table>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://java.sum.com/xml/ns/javaee" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee                
+http://java.sun.com/xml/ns/javaee/web-app_3_1.xsd">
+ <!-- <servlet>
+	<servlet-name>ShowServlet</servlet-name>
+	<servlet-class>src.com.hdquan.servlet.ShowServlet</servlet-class>
+	<servlet-name>InsertServlet</servlet-name>
+	<servlet-class>src.com.hdquan.servlet.InsertServlet</servlet-class>
+	</servlet>
+		<servlet-mapping>
+	<servlet-name>ShowServlet</servlet-name>
+	<url-pattern>/show</url-pattern>
+	<servlet-name>InsertServlet</servlet-name>
+	<url-pattern>/insert</url-pattern>
+	</servlet-mapping>
+	-->
+<!-- 自己配置描述文件，需要多少个描述文件就配置多少 -->
+<jsp-config>
+    <!-- 配置c描述文件-对应c标签，这里的taglib-uri对应jsp中引入的uri -->
+    <taglib>
+        <taglib-uri>http://www.codecoord.com</taglib-uri>
+        <taglib-location>/flower1/WEB-INF/c.tld</taglib-location>
+    </taglib>
+</jsp-config>
+ </web-app>

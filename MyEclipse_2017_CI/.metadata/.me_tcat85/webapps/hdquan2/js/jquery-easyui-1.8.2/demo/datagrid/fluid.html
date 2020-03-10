@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Fluid DataGrid - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"63900",secure:"63905"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
+<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-65" data-genuitec-path="/hdquan2/WebRoot/js/jquery-easyui-1.8.2/demo/datagrid/fluid.html">
+	<h2 data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-65" data-genuitec-path="/hdquan2/WebRoot/js/jquery-easyui-1.8.2/demo/datagrid/fluid.html">Fluid DataGrid</h2>
+	<p>This example shows how to assign percentage width to a column in DataGrid.</p>
+	<div style="margin:20px 0;"></div>
+	
+	<table id="dg" class="easyui-datagrid" title="Fluid DataGrid" style="width:700px;height:250px"
+			data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
+		<thead>
+			<tr>
+				<th data-options="field:'itemid',resizable:false" width="15%">Item ID(15%)</th>
+				<th data-options="field:'productid',resizable:false" width="15%">Product(15%)</th>
+				<th data-options="field:'listprice',align:'right',resizable:false" width="15%">List Price(15%)</th>
+				<th data-options="field:'unitcost',align:'right',resizable:false" width="15%">Unit Cost(15%)</th>
+				<th data-options="field:'attr1',resizable:false" width="25%">Attribute(25%)</th>
+				<th data-options="field:'status',align:'center',resizable:false" width="15%">Status(15%)</th>
+			</tr>
+		</thead>
+	</table>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Alert Messager - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"63900",secure:"63905"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
+<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-148" data-genuitec-path="/hdquan2/WebRoot/js/jquery-easyui-1.8.2/demo/messager/alert.html">
+	<h2 data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-148" data-genuitec-path="/hdquan2/WebRoot/js/jquery-easyui-1.8.2/demo/messager/alert.html">Alert Messager</h2>
+	<p>Click on each button to display different alert message box.</p>
+	<div style="margin:20px 0;">
+		<a href="#" class="easyui-linkbutton" onclick="alert1()">Alert</a>
+		<a href="#" class="easyui-linkbutton" onclick="alert2()">Error</a>
+		<a href="#" class="easyui-linkbutton" onclick="alert3()">Info</a>
+		<a href="#" class="easyui-linkbutton" onclick="alert4()">Question</a>
+		<a href="#" class="easyui-linkbutton" onclick="alert5()">Warning</a>
+	</div>
+	<script>
+		function alert1(){
+			$.messager.alert('My Title','Here is a message!');
+		}
+		function alert2(){
+			$.messager.alert('My Title','Here is a error message!','error');
+		}
+		function alert3(){
+			$.messager.alert('My Title','Here is a info message!','info');
+		}
+		function alert4(){
+			$.messager.alert('My Title','Here is a question message!','question');
+		}
+		function alert5(){
+			$.messager.alert('My Title','Here is a warning message!','warning');
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+1564985574427	Copy compilation unit
+1564988622986	Extract local variable 'servletContext'
+1564988676511	Delete element
+1564988803382	Extract local variable 'attribute'
+1564991150660	Extract local variable 'initParameter'
+1564991613358	Extract local variable 'initParameter'
+1564992076438	Extract local variable 'servletContext'
+1564992263115	Extract local variable 'initParameter'
+1565001208019	Copy file
+1565008098193	Extract local variable 'principal'
+1565009118086	Extract local variable 'parameter'
+1565009868792	Extract local variable 'parameter'
+1565010812653	Extract local variable 'equals'
+1565011459498	Extract local variable 'equals'
+1565012493060	Extract local variable 'addWhere'
+1565068663244	Extract local variable 'queryByNameAndPwd'
+1565069714524	Extract local variable 'insertRole'
+1565069834077	Extract local variable 'roles'
+1565072432919	Copy compilation unit
+1565072497673	Copy compilation unit
+1565072555400	Copy compilation unit
+1565072576380	Copy compilation unit
+1565072675287	Copy compilation unit
+1565074109397	Extract local variable 'permission'
+1565076206430	Extract local variable 'addWhere'
+1565081697111	Extract local variable 'id2'
+1565093894222	Extract local variable 'permission2'
+1565098561766	Extract local variable 'roles2'
+1565100194709	Extract local variable 'updateUser'
+1565157269496	Extract local variable 'roles'
+1565157308205	Extract local variable 'iterator'
+1565157484540	Extract local variable 'next'
+1565159658589	Extract local variable 'split'
+1565185632653	Copy file
+1565186756424	Extract local variable 'createQuery'
+1565186777048	Extract local variable 'list'
+1565186889383	Extract local variable 'departments'
+1565261189512	Delete element
+1565437912332	Extract local variable 'department'
+1565439249680	Extract local variable 'department'
+1565439275694	Extract local variable 'roles'
+1565449223820	Extract local variable 'parameter'
+1565449312230	Extract local variable 'valueOf'
+1565449450668	Extract local variable 'parameter'
+1565452036059	Extract local variable 'parameterMap'

@@ -1,0 +1,43 @@
+1563692242691	Delete element
+1563692255504	Copy compilation unit
+1563701176175	Delete element
+1563701188126	Copy compilation unit
+1563772763167	Extract local variable 'createQuery'
+1563775287442	Extract local variable 'list'
+1563775913346	Extract local variable 'insert'
+1563779007370	Extract local variable 'js'
+1563780150731	Extract local variable 'objects'
+1563780468412	Extract local variable 'objects'
+1563786891990	Extract local variable 'currentSession'
+1563786982785	Extract local variable 'createQuery'
+1563787006945	Extract local variable 'list'
+1563791583458	Extract local variable 'currentSession'
+1563793889453	Extract local variable 'currentSession'
+1563796213510	Extract local variable 'currentSession'
+1563796240561	Extract local variable 'userGroup'
+1563797217553	Copy compilation unit
+1563797240816	Copy compilation unit
+1563797260599	Copy compilation unit
+1563797313071	Copy compilation unit
+1563797333201	Copy compilation unit
+1563797528403	Extract local variable 'currentSession'
+1563798479023	Extract local variable 'role'
+1563868084105	Extract local variable 'currentSession'
+1563868214514	Extract local variable 'role2'
+1563868338501	Extract local variable 'currentSession'
+1563868408274	Extract local variable 'createQuery'
+1563868427951	Extract local variable 'setParameter'
+1563868453085	Extract local variable 'list'
+1563971871116	Extract local variable 'queryByNameAndPwd'
+1563971942356	Extract local variable 'username'
+1564026260737	Delete element
+1564031722048	Rename resource 'T(PJRE0}8)99{UI5YF]WL@G.png'
+1564031724536	Move 'logo.png' to 'login'
+1564032911674	Copy file
+1564051991657	Extract local variable 'list'
+1564052095499	Extract local variable 'list'
+1564052633203	Copy compilation unit
+1564126202872	Extract local variable 'list'
+1564128810100	Delete element
+1564232783173	Extract local variable 'createQuery'
+1564232818682	Extract local variable 'list'

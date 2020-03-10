@@ -1,0 +1,29 @@
+package com.hdquan.pojo;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+@Entity
+public class Unit {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int uId;
+	@OneToOne(cascade=CascadeType.ALL,mappedBy="address2")
+	private String uName;
+	public int getuId() {
+		return uId;
+	}
+	public void setuId(int uId) {
+		this.uId = uId;
+	}
+	public String getuName() {
+		return uName;
+	}
+	public void setuName(String uName) {
+		this.uName = uName;
+	}
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Auto Height for Layout - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"63900",secure:"63905"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
+<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-123" data-genuitec-path="/hdquan3/WebRoot/js/jquery-easyui-1.8.2/demo/layout/autoheight.html">
+	<h2 data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-123" data-genuitec-path="/hdquan3/WebRoot/js/jquery-easyui-1.8.2/demo/layout/autoheight.html">Auto Height for Layout</h2>
+	<p>This example shows how to auto adjust layout height after dynamically adding items.</p>
+	<div style="margin:20px 0;">
+		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="addItem()">Add Item</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="removeItem()">Remove Item</a>
+	</div>
+	<div id="cc" style="width:700px;height:350px;">
+		<div data-options="region:'north'" style="height:50px"></div>
+		<div data-options="region:'south'" style="height:50px;"></div>
+		<div data-options="region:'west'" style="width:150px;"></div>
+		<div data-options="region:'center'" style="padding:20px">
+			<p>Panel Content.</p>
+			<p>Panel Content.</p>
+			<p>Panel Content.</p>
+			<p>Panel Content.</p>
+			<p>Panel Content.</p>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$('#cc').layout();
+			setHeight();
+		});
+		
+		function addItem(){
+			$('#cc').layout('panel','center').append('<p>More Panel Content.</p>');
+			setHeight();
+		}
+		
+		function removeItem(){
+			$('#cc').layout('panel','center').find('p:last').remove();
+			setHeight();
+		}
+		
+		function setHeight(){
+			var c = $('#cc');
+			var p = c.layout('panel','center');	// get the center panel
+			var oldHeight = p.panel('panel').outerHeight();
+			p.panel('resize', {height:'auto'});
+			var newHeight = p.panel('panel').outerHeight();
+			c.layout('resize',{
+				height: (c.height() + newHeight - oldHeight)
+			});
+		}
+	</script>
+</body>
+</html>

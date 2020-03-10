@@ -1,0 +1,17 @@
+1563372792605	Rename type 'entity'
+1563372807726	Delete element
+1563372875387	Rename resource 'Person.hbm.xml'
+1563372954086	Rename resource 'springmvc.xml'
+1563373095100	Move compilation unit
+1563373122133	Rename package 'cn.itcast.DeptDao'
+1563373162204	Copy package
+1563373166266	Delete element
+1563373170107	Move compilation unit
+1563373639130	Rename package 'cn.itcast.service'
+1563373657443	Rename package 'cn.itcast.service.DeptService'
+1563380157591	Delete element
+1563380893612	Delete elements
+1563381111480	Rename resource 'Address.hbm.xml'
+1563409151107	Rename package 'com.demo.ssm.DaoImpl'
+1563412788527	Rename package 'com.demo.ssm.daoImpl'
+1563413560504	Delete element

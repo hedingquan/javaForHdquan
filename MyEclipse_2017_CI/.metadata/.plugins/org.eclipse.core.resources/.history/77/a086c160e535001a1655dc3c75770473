@@ -1,0 +1,122 @@
+package com.hdquan.pojo;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
+@Entity(name="account")
+public class Account {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
+	private String Name;
+	private String salaryNum;
+	@OneToMany(cascade=CascadeType.ALL)
+	private Room room;
+	@OneToMany(cascade=CascadeType.ALL)
+	private Unit unit;
+	private String Season;
+	private String electricBill;
+	private String lastelectricNum;
+	private String electricNum;
+	private String waterBill;
+	private String lastewaterNum;
+	private String waterNum;
+	private String check_electric_time;
+	private String check_water_time;
+	private String addition;
+	public String getLastelectricNum() {
+		return lastelectricNum;
+	}
+	public void setLastelectricNum(String lastelectricNum) {
+		this.lastelectricNum = lastelectricNum;
+	}
+	public String getLastewaterNum() {
+		return lastewaterNum;
+	}
+	public void setLastewaterNum(String lastewaterNum) {
+		this.lastewaterNum = lastewaterNum;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return Name;
+	}
+	public void setName(String name) {
+		Name = name;
+	}
+	public String getSalaryNum() {
+		return salaryNum;
+	}
+	public void setSalaryNum(String salaryNum) {
+		this.salaryNum = salaryNum;
+	}
+	public Room getRoom() {
+		return room;
+	}
+	public void setRoom(Room room) {
+		this.room = room;
+	}
+	public Unit getUnit() {
+		return unit;
+	}
+	public void setUnit(Unit unit) {
+		this.unit = unit;
+	}
+	public String getSeason() {
+		return Season;
+	}
+	public void setSeason(String season) {
+		Season = season;
+	}
+	public String getElectricBill() {
+		return electricBill;
+	}
+	public void setElectricBill(String electricBill) {
+		this.electricBill = electricBill;
+	}
+	public String getElectricNum() {
+		return electricNum;
+	}
+	public void setElectricNum(String electricNum) {
+		this.electricNum = electricNum;
+	}
+	public String getWaterBill() {
+		return waterBill;
+	}
+	public void setWaterBill(String waterBill) {
+		this.waterBill = waterBill;
+	}
+	public String getWaterNum() {
+		return waterNum;
+	}
+	public void setWaterNum(String waterNum) {
+		this.waterNum = waterNum;
+	}
+	public String getCheck_electric_time() {
+		return check_electric_time;
+	}
+	public void setCheck_electric_time(String check_electric_time) {
+		this.check_electric_time = check_electric_time;
+	}
+	public String getCheck_water_time() {
+		return check_water_time;
+	}
+	public void setCheck_water_time(String check_water_time) {
+		this.check_water_time = check_water_time;
+	}
+	public String getAddition() {
+		return addition;
+	}
+	public void setAddition(String addition) {
+		this.addition = addition;
+	}
+}

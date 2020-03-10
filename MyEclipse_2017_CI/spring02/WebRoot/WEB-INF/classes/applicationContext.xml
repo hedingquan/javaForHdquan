@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="peo" class="com.hdquan.pojo.People">
+	<property name="id">
+	<value>4444</value>
+	</property>
+	<property name="name">
+	<value>zhangsan</value></property>
+	<property name="sets">
+	<set>
+	<value>1</value>
+		<value>2</value>
+			<value>3</value>
+				<value>4</value>
+	</set>
+	</property>
+	<property name="list">
+	<list>
+	<value>1</value>
+		<value>2</value>
+			<value>3</value>
+				<value>4</value>
+	</list>
+	</property>
+	<!-- <property name="list" value="1,2,3"></property> -->
+	
+	<property name="map">
+		<map>
+		<entry key="a" value="b"></entry>
+			<entry key="c" value="d"></entry>
+		</map>
+	</property>
+	<!--  
+	<property name="demo">
+	<props>
+	<prop key="key">value</prop>
+	<prop key="key1">value1</prop>
+	</props>
+	</property>
+	-->
+	<property name="desk" ref="desk1">
+	
+	</property>
+	</bean>
+	
+	<bean id="desk1" class="com.hdquan.pojo.Desk">
+	<property name="id" value="123"></property>
+	<property name="price" value="678"></property>
+	</bean>
+
+ </beans>

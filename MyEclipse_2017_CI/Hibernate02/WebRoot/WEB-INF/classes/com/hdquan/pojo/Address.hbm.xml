@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 	package="com.hdquan.pojo">
+<!-- 映射哪个包的内容 -->
+
+	<class name="Address" table="_address" lazy="true">
+		<id name="id">
+			<generator class="native"/>
+		</id>
+
+		<property name="city"/>
+		<property name="country"/>
+		<one-to-one name="company" class="Company" property-ref="address" cascade="all"></one-to-one>
+		</class>
+	
+</hibernate-mapping>

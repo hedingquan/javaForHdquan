@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Message Box Position - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"63900",secure:"63905"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
+<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-153" data-genuitec-path="/hdquan3/WebRoot/js/jquery-easyui-1.8.2/demo/messager/position.html">
+	<h2 data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-153" data-genuitec-path="/hdquan3/WebRoot/js/jquery-easyui-1.8.2/demo/messager/position.html">Message Box Position</h2>
+	<p>Click the buttons below to display message box on different position.</p>
+	<div style="margin:20px 0;">
+		<p>
+			<a href="javascript:void(0)" class="easyui-linkbutton" onclick="topLeft();">TopLeft</a>
+			<a href="javascript:void(0)" class="easyui-linkbutton" onclick="topCenter()">TopCenter</a>
+			<a href="javascript:void(0)" class="easyui-linkbutton" onclick="topRight()">TopRight</a>
+		</p>
+		<p>
+			<a href="javascript:void(0)" class="easyui-linkbutton" onclick="centerLeft()">CenterLeft</a>
+			<a href="javascript:void(0)" class="easyui-linkbutton" onclick="center()">Center</a>
+			<a href="javascript:void(0)" class="easyui-linkbutton" onclick="centerRight()">CenterRight</a>
+		</p>
+		<p>
+			<a href="javascript:void(0)" class="easyui-linkbutton" onclick="bottomLeft()">BottomLeft</a>
+			<a href="javascript:void(0)" class="easyui-linkbutton" onclick="bottomCenter()">BottomCenter</a>
+			<a href="javascript:void(0)" class="easyui-linkbutton" onclick="bottomRight()">BottomRight</a>
+		</p>
+	</div>
+	<script>
+		function topLeft(){
+			$.messager.show({
+				title:'My Title',
+				msg:'The message content',
+				showType:'show',
+				style:{
+					right:'',
+					left:0,
+					top:document.body.scrollTop+document.documentElement.scrollTop,
+					bottom:''
+				}
+			});
+		}
+		function topCenter(){
+			$.messager.show({
+				title:'My Title',
+				msg:'The message content',
+				showType:'slide',
+				style:{
+					right:'',
+					top:document.body.scrollTop+document.documentElement.scrollTop,
+					bottom:''
+				}
+			});
+		}
+		function topRight(){
+			$.messager.show({
+				title:'My Title',
+				msg:'The message content',
+				showType:'show',
+				style:{
+					left:'',
+					right:0,
+					top:document.body.scrollTop+document.documentElement.scrollTop,
+					bottom:''
+				}
+			});
+		}
+		function centerLeft(){
+			$.messager.show({
+				title:'My Title',
+				msg:'The message content',
+				showType:'fade',
+				style:{
+					left:0,
+					right:'',
+					bottom:''
+				}
+			});
+		}
+		function center(){
+			$.messager.show({
+				title:'My Title',
+				msg:'The message content',
+				showType:'fade',
+				style:{
+					right:'',
+					bottom:''
+				}
+			});
+		}
+		function centerRight(){
+			$.messager.show({
+				title:'My Title',
+				msg:'The message content',
+				showType:'fade',
+				style:{
+					left:'',
+					right:0,
+					bottom:''
+				}
+			});
+		}
+		function bottomLeft(){
+			$.messager.show({
+				title:'My Title',
+				msg:'The message content',
+				showType:'show',
+				style:{
+					left:0,
+					right:'',
+					top:'',
+					bottom:-document.body.scrollTop-document.documentElement.scrollTop
+				}
+			});
+		}
+		function bottomCenter(){
+			$.messager.show({
+				title:'My Title',
+				msg:'The message content',
+				showType:'slide',
+				style:{
+					right:'',
+					top:'',
+					bottom:-document.body.scrollTop-document.documentElement.scrollTop
+				}
+			});
+		}
+		function bottomRight(){
+			$.messager.show({
+				title:'My Title',
+				msg:'The message content',
+				showType:'show'
+			});
+		}
+	</script>
+</body>
+</html>

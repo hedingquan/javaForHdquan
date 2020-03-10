@@ -1,0 +1,16 @@
+#Tomcat publish data
+#Sat Feb 29 21:57:49 CST 2020
+org.eclipse.jst.jee.server\:SpringMVC2=D\:\\Workspaces\\MyEclipse 2017 CI\\.metadata\\.me_tcat85\\webapps\\SpringMVC2
+org.eclipse.jst.jee.server\:Campus_part-time_job_system=D\:\\Workspaces\\MyEclipse 2017 CI\\.metadata\\.me_tcat85\\webapps\\Campus_part-time_job_system
+org.eclipse.jst.jee.server\:register=D\:\\Workspaces\\MyEclipse 2017 CI\\.metadata\\.me_tcat85\\webapps\\register
+org.eclipse.jst.jee.server\:Hydropower_query_system=D\:\\Workspaces\\MyEclipse 2017 CI\\.metadata\\.me_tcat85\\webapps\\Hydropower_query_system
+org.eclipse.jst.jee.server\:SpringMVC08=D\:\\Workspaces\\MyEclipse 2017 CI\\.metadata\\.me_tcat85\\webapps\\SpringMVC08
+org.eclipse.jst.jee.server\:SpringMVC07=D\:\\Workspaces\\MyEclipse 2017 CI\\.metadata\\.me_tcat85\\webapps\\SpringMVC03
+org.eclipse.jst.jee.server\:SpringMVC06=D\:\\Workspaces\\MyEclipse 2017 CI\\.metadata\\.me_tcat85\\webapps\\SpringMVC03
+org.eclipse.jst.jee.server\:SpringMVC05=D\:\\Workspaces\\MyEclipse 2017 CI\\.metadata\\.me_tcat85\\webapps\\SpringMVC03
+org.eclipse.jst.jee.server\:SpringMVC04=D\:\\Workspaces\\MyEclipse 2017 CI\\.metadata\\.me_tcat85\\webapps\\SpringMVC03
+org.eclipse.jst.jee.server\:Shiro02=D\:\\Workspaces\\MyEclipse 2017 CI\\.metadata\\.me_tcat85\\webapps\\Shiro02
+org.eclipse.jst.jee.server\:spring10=D\:\\Workspaces\\MyEclipse 2017 CI\\.metadata\\.me_tcat85\\webapps\\spring10
+org.eclipse.jst.jee.server\:SpringMVC03=D\:\\Workspaces\\MyEclipse 2017 CI\\.metadata\\.me_tcat85\\webapps\\SpringMVC03
+org.eclipse.jst.jee.server\:hdquan3=D\:\\Workspaces\\MyEclipse 2017 CI\\.metadata\\.me_tcat85\\webapps\\hdquan3
+org.eclipse.jst.jee.server\:hdquan2=D\:\\Workspaces\\MyEclipse 2017 CI\\.metadata\\.me_tcat85\\webapps\\hdquan2

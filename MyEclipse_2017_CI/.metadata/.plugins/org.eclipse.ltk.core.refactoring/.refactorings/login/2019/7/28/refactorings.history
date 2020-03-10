@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;rbac/src/com.hdquan.mapper&apos;&#x0D;&#x0A;- Original project: &apos;login&apos;&#x0D;&#x0A;- Destination element: &apos;rbac/src/com.hdquan.mapper&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     com.hdquan.mapper.UsersMapper.java&#x0D;&#x0A;     UsersMapper.xml" description="Copy elements" destination="=rbac/src&lt;com.hdquan.mapper" element1="src/com/hdquan/mapper/UsersMapper.xml" element2="/src&lt;com.hdquan.mapper{UsersMapper.java" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1562903993134" units="1" version="1.0"/>
+</session>

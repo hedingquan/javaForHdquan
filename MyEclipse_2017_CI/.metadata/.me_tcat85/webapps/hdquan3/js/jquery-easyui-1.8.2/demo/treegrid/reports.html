@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Reports using TreeGrid - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"63900",secure:"63905"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
+<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-268" data-genuitec-path="/hdquan3/WebRoot/js/jquery-easyui-1.8.2/demo/treegrid/reports.html">
+	<h2 data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-268" data-genuitec-path="/hdquan3/WebRoot/js/jquery-easyui-1.8.2/demo/treegrid/reports.html">Reports using TreeGrid</h2>
+	<p>Using TreeGrid to show complex reports.</p>
+	<div style="margin:20px 0;"></div>
+	<table title="Reports using TreeGrid" class="easyui-treegrid" style="width:700px;height:250px"
+			data-options="
+				url: 'treegrid_data3.json',
+				method: 'get',
+				rownumbers: true,
+				showFooter: true,
+				idField: 'id',
+				treeField: 'region'
+			">
+		<thead frozen="true">
+			<tr>
+				<th field="region" width="200">Region</th>
+			</tr>
+		</thead>
+		<thead>
+			<tr>
+				<th colspan="4">2009</th>
+				<th colspan="4">2010</th>
+			</tr>
+			<tr>
+				<th field="f1" width="60" align="right">1st qrt.</th>
+				<th field="f2" width="60" align="right">2st qrt.</th>
+				<th field="f3" width="60" align="right">3st qrt.</th>
+				<th field="f4" width="60" align="right">4st qrt.</th>
+				<th field="f5" width="60" align="right">1st qrt.</th>
+				<th field="f6" width="60" align="right">2st qrt.</th>
+				<th field="f7" width="60" align="right">3st qrt.</th>
+				<th field="f8" width="60" align="right">4st qrt.</th>
+			</tr>
+		</thead>
+	</table>
+
+</body>
+</html>

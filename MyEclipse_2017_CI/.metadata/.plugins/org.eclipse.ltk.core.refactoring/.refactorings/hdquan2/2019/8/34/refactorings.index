@@ -1,0 +1,55 @@
+1566139950587	Copy compilation unit
+1566141036501	Extract local variable 'activeSessions'
+1566142404367	Copy file
+1566143627750	Copy compilation unit
+1566143652092	Copy compilation unit
+1566143973904	Copy compilation unit
+1566144010769	Copy compilation unit
+1566144190728	Copy compilation unit
+1566145690332	Extract local variable 'adressByroles'
+1566146198779	Extract local variable 'host'
+1566146326005	Extract local variable 'roles'
+1566146491828	Delete element
+1566147945741	Extract local variable 'adress'
+1566148520276	Extract local variable 'host'
+1566148568643	Extract local variable 'ipEnd'
+1566148578111	Extract local variable 'ipStart'
+1566213682546	Delete element
+1566213862727	Extract local variable 'adress'
+1566216775706	Extract local variable 'subject'
+1566216791010	Extract local variable 'principal'
+1566222770096	Extract local variable 'requestUrl'
+1566222929903	Extract local variable 'host'
+1566224684482	Delete element
+1566225236256	Extract local variable 'id'
+1566225340766	Extract local variable 'startTimestamp'
+1566225356556	Extract local variable 'host'
+1566225373096	Extract local variable 'lastAccessTime'
+1566225389465	Extract local variable 'timeout'
+1566226075905	Extract local variable 'stringPermissions'
+1566232191056	Copy compilation unit
+1566232361896	Delete element
+1566233457542	Extract local variable 'iterator'
+1566287225855	Delete element
+1566287230307	Copy file
+1566287256248	Delete element
+1566287268111	Copy file
+1566287647963	Delete element
+1566295740681	Extract local variable 'attribute'
+1566297062471	Extract local variable 'attribute'
+1566299393174	Rename resource '3.html'
+1566299401987	Copy file
+1566299411422	Delete element
+1566299427999	Copy file
+1566299435170	Delete element
+1566299466870	Copy file
+1566299486634	Delete element
+1566301945895	Extract local variable 'split'
+1566302641689	Extract local variable 'session'
+1566302825116	Extract local variable 'attribute'
+1566303438744	Extract local variable 'session'
+1566303759475	Extract local variable 'session2'
+1566304495593	Extract local variable 'subject'
+1566304532467	Extract local variable 'session'
+1566305086480	Copy compilation unit
+1566305093572	Delete element

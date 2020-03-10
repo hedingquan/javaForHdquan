@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<commands>
+	<moveCategory
+		id="org.eclipse.wb.swing.components.menu"
+		nextCategory="org.eclipse.wb.swing.actions"/>
+	<addCategory
+		id="custom_1558152821080"
+		name="Containers"
+		description=""
+		visible="true"
+		open="true"
+		nextCategory="org.eclipse.wb.swing.containers"/>
+	<removeCategory
+		id="custom_1558152821080"/>
+</commands>

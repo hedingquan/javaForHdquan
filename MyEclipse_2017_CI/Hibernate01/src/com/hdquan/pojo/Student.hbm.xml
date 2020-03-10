@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 	package="com.hdquan.pojo">
+	<class name="Student" table="_student" lazy="true">
+		<composite-id name="id" class="StudentId">
+			<!-- 联合主键 -->
+			<key-property name="firstname" type="java.lang.String" column="firstname"></key-property>
+			<key-property name="lastname" type="java.lang.String" column="lastname"></key-property>
+		</composite-id>
+		<property name="major"></property>
+	</class>
+	</hibernate-mapping>
+ 

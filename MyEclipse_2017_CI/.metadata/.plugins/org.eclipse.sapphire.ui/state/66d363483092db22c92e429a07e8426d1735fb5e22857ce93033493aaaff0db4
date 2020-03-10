@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MasterDetailsEditorPageState>
+    <ContentOutlineState>
+        <Ratio>0.2991014120667522</Ratio>
+        <Root>
+            <Children>
+                <MasterDetailsNodeState>
+                    <Label>General Settings</Label>
+                    <Expanded>true</Expanded>
+                </MasterDetailsNodeState>
+                <MasterDetailsNodeState>
+                    <Label>Error Pages</Label>
+                    <Expanded>true</Expanded>
+                </MasterDetailsNodeState>
+                <MasterDetailsNodeState>
+                    <Label>JSP Configuration</Label>
+                    <Expanded>true</Expanded>
+                    <Selected>true</Selected>
+                </MasterDetailsNodeState>
+            </Children>
+        </Root>
+    </ContentOutlineState>
+</MasterDetailsEditorPageState>

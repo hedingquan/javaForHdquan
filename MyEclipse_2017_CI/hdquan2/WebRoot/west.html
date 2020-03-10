@@ -1,0 +1,174 @@
+<script type="text/javascript" charset="utf-8">
+
+	var tree;
+	var menuPanel;
+	$(function(){
+	
+	tree = $('#menu').tree({
+		url:'menu.action',
+		lines:true,
+		checkbox:true,
+		cascadeCheck:true,
+	 	onLoadSuccess:function(node, data)
+		{
+			var n=$(this).tree('find','yhgl');
+				if(n)
+				{
+					$(this).tree('check',n.target);
+					addTab(n);
+				}
+			var t=$(this);
+			if(data)
+			{
+			$(data).each(function(index,d){
+					if(this.state=='closed')
+					{
+						t.tree('expandAll');
+					}
+										});
+			}
+		},
+		 toolbar : [{
+			text : '展开',
+			iconCls : 'icon-redo',
+			handler : function()
+			{
+				var node = treegrid.treegrid('getSelected');
+				if(node)
+				{
+					treegrid.treegrid('expandAll',node.cid);
+				}else{
+					treegrid.treegrid('expandAll');
+				}
+			}
+		},'-',{
+			text : '折叠',
+			iconCls : 'icon-undo',
+			handler : function()
+			{
+				var node = treegrid.treegrid('getSelected');
+				if(node)
+				{
+					treegrid.treegrid('collaspeseAll',node.cid);
+				}else{
+					treegrid.treegrid('collaspeseAll');
+				}
+			}
+		},'-',{
+			text : '刷新',
+			iconCls : 'icon-reload',
+			handler : function()
+			{
+				treegrid.treegrid('reload');
+			}
+		}],
+		onDblClick : function(node)
+		{
+			if(node.state == 'closed')
+			{
+				$(this).tree('expand',node.target);
+			}else{
+				$(this).tree('collapse',node.target);
+			}
+		},
+		onClick: function(node){
+				console.info(node);
+				addTab(node);
+								}
+	});
+	
+	menuPanel= $('#menuPanel').panel({
+		tools :[{
+			iconCls: 'icon-reload',
+			handler : function()
+			{
+				tree.tree('reload');
+			}
+			},{
+			iconCls: 'icon-redo',
+			handler : function()
+			{
+			var node = tree.tree('getSelected');
+				if(node)
+				{
+					tree.tree('expandAll',node.target);
+				}else
+				{
+					tree.tree('expandAll');
+				}
+			}
+			},{
+			iconCls: 'icon-undo',
+			handler : function()
+			{
+			var node = tree.tree('getSelected');
+				if(node)
+				{
+					tree.tree('collapseAll',node.target);
+				}else
+				{
+					tree.tree('collapseAll');
+				}
+			}
+				}]
+
+	});
+});
+		function addTab(node)
+		{
+			if($('#centerTabs').tabs('exists',node.text))
+			{
+				$('#centerTabs').tabs('select',node.text)
+			}else
+			{
+				if(node.attributes.url && node.attributes.url.length>0)
+				{
+					/*  $.messager.progress({
+						text : '页面加载中....',
+						interval:100
+					
+					});  */
+					$('#centerTabs').tabs('add',{
+						title:node.text,
+						closable:true,
+						content : '<iframe src="'+node.attributes.url+'" frameborder="0" style="border:0;width:100%;height:100%;"></ifrane>',
+						tools:[{
+							iconCls : 'icon-mini-refresh',
+							handler	: function()
+							{
+								refreshTab(node.text);
+							}
+						}]
+					});
+				}else{
+					$('#centerTabs').tabs('add',{
+						title:node.text,
+						closable:true,
+						content: '<iframe src="error.jsp" frameborder="0" style="border:0;width:100%;height:100%;"></iframe>',
+						tools : [{
+							iconCls : 'icon-mini-refresh',
+							handler : function()
+							{
+								refreshTab(node.text);
+							}
+						}]
+					});
+				}
+			}
+		}
+	function refreshTab(title)
+	{
+		var tab = $('#centerTabs').tabs('getTab',title);
+		$('#centerTabs').tabs('update',{
+			tab : tab,
+			options : tab.panel('options')
+		});
+	}
+</script>
+	<div class="easyui-accordion" fit="true" border="false">
+	<div title="菜单">
+			<div name="menuPanel" id="menuPanel" fit="true" border="false" title="功能菜单" style="padding:5px;">
+			 	<ul id='menu'></ul>		
+			 </div>
+		</div>
+	</div>

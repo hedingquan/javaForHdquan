@@ -1,0 +1,34 @@
+<classpath>
+  <container id="Shiro01!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="D:/Workspaces/MyEclipse 2017 CI/Shiro01/WebRoot/WEB-INF/lib/shiro-web-1.3.2.jar">
+      <source-attachment-path>C:/Users/Administrator/Downloads/shiro/shiro-root-1.4.1-source-release.zip</source-attachment-path>
+    </entry>
+  </container>
+  <container id="Shiro02!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="D:/Workspaces/MyEclipse 2017 CI/Shiro02/WebRoot/WEB-INF/lib/shiro-web-1.3.2.jar">
+      <source-attachment-path>C:/Users/Administrator/Downloads/shiro/shiro-web-1.3.2-sources.jar</source-attachment-path>
+    </entry>
+    <entry id="D:/Workspaces/MyEclipse 2017 CI/Shiro02/WebRoot/WEB-INF/lib/spring-web-5.1.6.RELEASE.jar">
+      <source-attachment-path>C:/Users/Administrator/Downloads/spring/spring-framework-5.1.6.RELEASE-docs.zip</source-attachment-path>
+    </entry>
+  </container>
+  <container id="hdquan2!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="D:/Workspaces/MyEclipse 2017 CI/hdquan2/WebRoot/WEB-INF/lib/shiro-web-1.3.2.jar">
+      <source-attachment-path>C:/Users/Administrator/Downloads/shiro/shiro-web-1.3.2-sources.jar</source-attachment-path>
+    </entry>
+    <entry id="D:/Workspaces/MyEclipse 2017 CI/hdquan2/WebRoot/WEB-INF/lib/shiro-core-1.3.2.jar">
+      <source-attachment-path>C:/Users/Administrator/Downloads/shiro/shiro-root-1.4.1-source-release.zip</source-attachment-path>
+    </entry>
+  </container>
+  <container id="SpringMVC01!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="D:/Workspaces/MyEclipse 2017 CI/SpringMVC01/WebRoot/WEB-INF/lib/spring-webmvc-5.1.6.RELEASE.jar">
+      <source-attachment-path>C:/Users/Administrator/Downloads/spring/spring-webmvc-5.1.6.RELEASE-sources.jar</source-attachment-path>
+      <attribute name="source_encoding">UTF-8</attribute>
+    </entry>
+  </container>
+  <container id="Struts01!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="D:/Workspaces/MyEclipse 2017 CI/Struts01/WebRoot/WEB-INF/lib/struts2-core-2.5.20.jar">
+      <source-attachment-path>C:/Users/Administrator/Downloads/struts/struts-2.5.20/src</source-attachment-path>
+    </entry>
+  </container>
+</classpath>

@@ -1,0 +1,48 @@
+package com.controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.Service.UserService;
+import com.pojo.Admin;
+import com.pojo.Buser;
+import com.pojo.Cuser;
+import com.pojo.User;
+
+@Controller
+public class UserController {
+	@Autowired
+	private UserService userService;
+	
+	@RequestMapping("/*")
+	public void myinfo(HttpServletRequest req, HttpServletResponse res,String user_ID) throws IOException, ServletException
+	{
+		Object user = userService.user(user_ID);
+		if(user instanceof Cuser)
+		{
+		req.setAttribute("user_type", "普通用户");
+		req.setAttribute("user_name", ((Cuser)user).getUser_name());
+		req.setAttribute("ID_card", ((Cuser)user).getID_card());
+		req.setAttribute("user_password", ((Cuser)user).getUser_password());
+		}else if(user instanceof Admin)
+		{
+			req.setAttribute("user_type", "管理员");
+			req.setAttribute("user_name", ((Admin)user).getUser_name());
+			req.setAttribute("ID_card", ((Admin)user).getID_card());
+			req.setAttribute("user_password", ((Admin)user).getUser_password());
+		}else{
+			req.setAttribute("user_type", "商店老板");
+			req.setAttribute("user_name", ((Buser)user).getUser_name());
+			req.setAttribute("ID_card", ((Buser)user).getID_card());
+			req.setAttribute("user_password", ((Buser)user).getUser_password());
+		}
+		req.getRequestDispatcher("Search_myinfo.jsp").forward(req, res);
+	}
+}

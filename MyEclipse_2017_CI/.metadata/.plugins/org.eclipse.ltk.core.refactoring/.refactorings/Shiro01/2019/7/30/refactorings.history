@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;MD5Test.java&apos; to &apos;hdquan2/src/com.hdquan.MD5&apos;&#x0D;&#x0A;- Original project: &apos;Shiro01&apos;&#x0D;&#x0A;- Destination element: &apos;hdquan2/src/com.hdquan.MD5&apos;&#x0D;&#x0A;- Original element: &apos;com.hdquan.shiro.authentication.MD5Test.java&apos;" description="Copy compilation unit" destination="=hdquan2/src&lt;com.hdquan.MD5" element1="/src&lt;com.hdquan.shiro.authentication{MD5Test.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1564026270550" units="1" version="1.0"/>
+</session>

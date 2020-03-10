@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="D:/MyEclipse2017/plugins/org.eclipse.osgi_3.11.1.v20160708-1632.jar" sourcepath="D:/MyEclipse2017/plugins/org.eclipse.osgi_3.11.1.v20160708-1632.jar"/>
+	<classpathentry kind="lib" path="D:/MyEclipse2017/plugins/org.eclipse.core.commands_3.8.0.v20160316-1921.jar" sourcepath="D:/MyEclipse2017/plugins/org.eclipse.core.commands_3.8.0.v20160316-1921.jar"/>
+	<classpathentry kind="lib" path="D:/MyEclipse2017/plugins/org.eclipse.equinox.common_3.8.0.v20160509-1230.jar" sourcepath="D:/MyEclipse2017/plugins/org.eclipse.equinox.common_3.8.0.v20160509-1230.jar"/>
+	<classpathentry kind="lib" path="D:/MyEclipse2017/plugins/org.eclipse.equinox.registry_3.6.100.v20160223-2218.jar" sourcepath="D:/MyEclipse2017/plugins/org.eclipse.equinox.registry_3.6.100.v20160223-2218.jar"/>
+	<classpathentry kind="lib" path="D:/MyEclipse2017/plugins/org.eclipse.core.runtime_3.12.0.v20160606-1342.jar" sourcepath="D:/MyEclipse2017/plugins/org.eclipse.core.runtime_3.12.0.v20160606-1342.jar"/>
+	<classpathentry kind="lib" path="D:/MyEclipse2017/plugins/org.eclipse.text_3.6.0.v20160503-1849.jar" sourcepath="D:/MyEclipse2017/plugins/org.eclipse.text_3.6.0.v20160503-1849.jar"/>
+	<classpathentry kind="lib" path="D:/MyEclipse2017/plugins/org.eclipse.swt.win32.win32.x86_64_3.105.1.v20160907-0248.jar" sourcepath="D:/MyEclipse2017/plugins/org.eclipse.swt.win32.win32.x86_64_3.105.1.v20160907-0248.jar"/>
+	<classpathentry kind="lib" path="D:/MyEclipse2017/plugins/org.eclipse.jface_3.12.0.v20160518-1929.jar" sourcepath="D:/MyEclipse2017/plugins/org.eclipse.jface_3.12.0.v20160518-1929.jar"/>
+	<classpathentry kind="lib" path="D:/MyEclipse2017/plugins/org.eclipse.jface.text_3.11.1.v20160819-1517.jar" sourcepath="D:/MyEclipse2017/plugins/org.eclipse.jface.text_3.11.1.v20160819-1517.jar"/>
+	<classpathentry kind="lib" path="D:/MyEclipse2017/plugins/org.eclipse.ui.workbench_3.108.1.v20160819-2118.jar" sourcepath="D:/MyEclipse2017/plugins/org.eclipse.ui.workbench_3.108.1.v20160819-2118.jar"/>
+	<classpathentry kind="lib" path="D:/MyEclipse2017/plugins/com.ibm.icu_56.1.0.v201601250100.jar" sourcepath="D:/MyEclipse2017/plugins/com.ibm.icu_56.1.0.v201601250100.jar"/>
+	<classpathentry kind="lib" path="D:/MyEclipse2017/plugins/org.eclipse.ui.forms_3.7.0.v20160518-1929.jar" sourcepath="D:/MyEclipse2017/plugins/org.eclipse.ui.forms_3.7.0.v20160518-1929.jar"/>
+	<classpathentry kind="lib" path="/flower1/WebRoot/WEB-INF/lib/mysql-connector-java-5.1.25-bin.jar"/>
+	<classpathentry kind="lib" path="/mybatis/WebRoot/WEB-INF/lib/ant-1.10.3.jar"/>
+	<classpathentry kind="lib" path="/mybatis/WebRoot/WEB-INF/lib/ant-launcher-1.10.3.jar"/>
+	<classpathentry kind="lib" path="/mybatis/WebRoot/WEB-INF/lib/asm-7.0.jar"/>
+	<classpathentry kind="lib" path="/mybatis/WebRoot/WEB-INF/lib/cglib-3.2.10.jar"/>
+	<classpathentry kind="lib" path="/mybatis/WebRoot/WEB-INF/lib/classes12.jar"/>
+	<classpathentry kind="lib" path="/mybatis/WebRoot/WEB-INF/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="/mybatis/WebRoot/WEB-INF/lib/javassist-3.24.1-GA.jar"/>
+	<classpathentry kind="lib" path="/mybatis/WebRoot/WEB-INF/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="/mybatis/WebRoot/WEB-INF/lib/log4j-api-2.11.2.jar"/>
+	<classpathentry kind="lib" path="/mybatis/WebRoot/WEB-INF/lib/log4j-core-2.11.2.jar"/>
+	<classpathentry kind="lib" path="/mybatis/WebRoot/WEB-INF/lib/mybatis-3.5.1.jar"/>
+	<classpathentry kind="lib" path="/mybatis/WebRoot/WEB-INF/lib/mysql-connector-java-3.1.10-bin.jar"/>
+	<classpathentry kind="lib" path="/mybatis/WebRoot/WEB-INF/lib/mysql-connector-java-5.1.25-bin.jar"/>
+	<classpathentry kind="lib" path="/mybatis/WebRoot/WEB-INF/lib/ognl-3.2.10.jar"/>
+	<classpathentry kind="lib" path="/mybatis/WebRoot/WEB-INF/lib/slf4j-api-1.7.26.jar"/>
+	<classpathentry kind="lib" path="/mybatis/WebRoot/WEB-INF/lib/slf4j-log4j12-1.7.26.jar"/>
+	<classpathentry kind="lib" path="/mybatis/WebRoot/WEB-INF/lib/sqljdbc4-chs-4.0.2206.100.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

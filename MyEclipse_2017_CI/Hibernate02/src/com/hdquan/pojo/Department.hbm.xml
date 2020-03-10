@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 	package="com.hdquan.pojo">
+<!-- 映射哪个包的内容 -->
+
+	<class name="Department" table="_department" lazy="true">
+		<id name="deptid">
+			<generator class="native"/>
+		</id>
+
+		<property name="dname" type="java.lang.String"	column="dname"/>
+			<property name="location" type="java.lang.String" column="location"></property>
+		
+				<set name="employees" cascade="all" inverse="true">
+					<key>
+						<column name="deptid"></column>
+					</key>
+					<one-to-many class="Employee"/>
+				</set>
+		</class>
+	
+</hibernate-mapping>

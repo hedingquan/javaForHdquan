@@ -1,0 +1,1 @@
+select c.id,c.name from Course c

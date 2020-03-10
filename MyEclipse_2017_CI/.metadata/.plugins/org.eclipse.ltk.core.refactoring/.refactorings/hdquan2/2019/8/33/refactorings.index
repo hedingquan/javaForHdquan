@@ -1,0 +1,39 @@
+1565513455166	Extract local variable 'parameter'
+1565513486787	Extract local variable 'valueOf'
+1565517108066	Extract local variable 'valueOf'
+1565517467539	Extract local variable 'list2'
+1565518229633	Extract local variable 'departments'
+1565518443722	Extract local variable 'class1'
+1565539476391	Extract local variable 'parameterMap'
+1565539798960	Extract local variable 'parameter'
+1565544777157	Extract local variable 'department2'
+1565595359666	Extract local variable 'createQuery'
+1565595369998	Extract local variable 'list'
+1565595479513	Extract local variable 'userGroup'
+1565596967282	Copy file
+1565607084192	Extract local variable 'parameterMap'
+1565607568244	Extract local variable 'insertUserGroup'
+1565608285683	Delete element
+1565623797734	Extract local variable 'findUserRoleByName'
+1565623844867	Extract local variable 'queryByNameAndPwd'
+1565690330444	Copy file
+1565690414453	Delete element
+1565691386342	Copy compilation unit
+1565691408943	Delete element
+1565692927936	Copy file
+1565698046209	Delete element
+1565700137552	Copy file
+1565700704977	Delete element
+1565706572350	Extract local variable 'update'
+1565706721225	Extract local variable 'roles'
+1565783810814	Extract local variable 'roles'
+1565783822514	Extract local variable 'roles'
+1565783889732	Extract local variable 'update'
+1565801566974	Extract local variable 'insert'
+1565874443831	Extract local variable 'roles'
+1565874541091	Extract local variable 'users'
+1565878300529	Extract local variable 'users'
+1565878303853	Extract local variable 'roles'
+1565941865863	Extract local variable 'object'
+1565944026629	Rename type 'Myadvise'
+1565952319781	Delete element

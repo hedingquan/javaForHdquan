@@ -1,0 +1,33 @@
+package com.hdquan.pojo;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Room {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int rId;
+	private String roomNum;
+	private int bId;
+	public int getrId() {
+		return rId;
+	}
+	public void setrId(int rId) {
+		this.rId = rId;
+	}
+	public String getRoomNum() {
+		return roomNum;
+	}
+	public void setRoomNum(String roomNum) {
+		this.roomNum = roomNum;
+	}
+	public int getbId() {
+		return bId;
+	}
+	public void setbId(int bId) {
+		this.bId = bId;
+	}
+}

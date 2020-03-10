@@ -1,0 +1,28 @@
+[genuitec-file-id="wc1-102"],[genuitec-lp-path="/hdquan3/WebRoot/js/jquery-easyui-1.8.2/demo/demo.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+body {
+    font-family:verdana,helvetica,arial,sans-serif;
+    padding:20px;
+    font-size:12px;
+    margin:0;
+}
+h2 {
+    font-size:18px;
+    font-weight:bold;
+    margin:0;
+    margin-bottom:15px;
+}
+.demo-info{
+	padding:0 0 12px 0;
+}
+.demo-tip{
+	display:none;
+}
+.label-top{
+    display: block;
+    height: 22px;
+    line-height: 22px;
+    vertical-align: middle;
+}

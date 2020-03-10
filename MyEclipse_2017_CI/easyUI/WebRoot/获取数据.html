@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>json数据语法.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+//1.定义基本格式
+	var person={"name":"张三","age":"23","gender":"true"};
+	//获取name的值
+		var name=alert(person.name);
+	
+	//alert(person);
+	//2.嵌套格式	{}->[]
+	var persons={
+	"persons":[
+	{
+	"name":"张三",
+	"age":"23",
+	"gender":true
+	},
+	{
+	"name":"李四",
+	"age":"24",
+	"gender":true
+	},
+	{
+	"name":"王五",
+	"age":"25",
+	"gender":false
+	}
+	]};
+	//alert(persons.persons[2].name);
+	//alert(persons);
+	
+	var ps=[	{
+	"name":"张三",
+	"age":"23",
+	"gender":true
+	},
+	{
+	"name":"李四",
+	"age":"24",
+	"gender":true
+	},
+	{
+	"name":"王五",
+	"age":"25",
+	"gender":false
+	}]
+	//alert(ps[1].name);
+	//	alert(ps);
+	
+	
+	//获取person对象中的所有键和值
+	//for in 循环
+/* 	for(var key in person)
+	{
+	//这样的方式获取不行，因为相当于person.“name”,key已经内含有了双引号
+	//alert(key+":"+person.key);
+	alert(key+":"+person[key]);
+	} */
+	
+	//获取ps中的所有值
+	for(var i=0;i<ps.length;i++)
+	{
+		var p=ps[i];
+		for(var key in p)
+		{
+		alert(key+":"+p[key]);
+		}
+	}
+</script>
+
+  </head>
+  
+  <body>
+    This is my HTML page. <br>
+  </body>
+</html>

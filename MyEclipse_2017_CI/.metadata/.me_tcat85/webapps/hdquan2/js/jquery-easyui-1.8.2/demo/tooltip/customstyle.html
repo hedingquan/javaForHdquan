@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Custom Tooltip Style - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"63900",secure:"63905"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
+<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-240" data-genuitec-path="/hdquan2/WebRoot/js/jquery-easyui-1.8.2/demo/tooltip/customstyle.html">
+	<h2 data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-240" data-genuitec-path="/hdquan2/WebRoot/js/jquery-easyui-1.8.2/demo/tooltip/customstyle.html">Custom Tooltip Style</h2>
+	<p>This sample shows how to change the tooltip style.</p>
+	<div style="margin:s0px 0;"></div>
+	<div style="padding:10px 200px">
+		<div id="pp1" class="easyui-panel" style="width:100px;padding:5px">Hover Me</div>
+	</div>
+	<div style="padding:10px 200px">
+		<div id="pp2" class="easyui-panel" style="width:100px;padding:5px">Hover Me</div>
+	</div>
+	<script>
+		$(function(){
+			$('#pp1').tooltip({
+				position: 'right',
+				content: '<span style="color:#fff">This is the tooltip message.</span>',
+				onShow: function(){
+					$(this).tooltip('tip').css({
+						backgroundColor: '#666',
+						borderColor: '#666'
+					});
+				}
+			});
+			$('#pp2').tooltip({
+				position: 'bottom',
+				content: '<div style="padding:5px;background:#eee;color:#000">This is the tooltip message.</div>',
+				onShow: function(){
+					$(this).tooltip('tip').css({
+						backgroundColor: '#fff000',
+						borderColor: '#ff0000',
+						boxShadow: '1px 1px 3px #292929'
+					});
+				},
+				onPosition: function(){
+					$(this).tooltip('tip').css('left', $(this).offset().left);
+					$(this).tooltip('arrow').css('left', 20);
+				}
+			});
+		});
+	</script>
+</body>
+</html>

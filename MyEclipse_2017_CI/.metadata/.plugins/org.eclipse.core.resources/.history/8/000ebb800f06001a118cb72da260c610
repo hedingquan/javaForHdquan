@@ -1,0 +1,30 @@
+package com.controller;
+
+
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.Service.ApplyService;
+import com.pojo.Work; 
+
+@Controller
+public class ApplyController {
+
+	@Autowired
+	private ApplyService applyService;
+
+	@RequestMapping("add_apply.action")
+	public void add_apply(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException, IllegalAccessException, InvocationTargetException
+	{
+	
+	}
+}

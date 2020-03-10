@@ -1,0 +1,64 @@
+<script type="text/javascript" charset="utf-8">
+		function addTab(node)
+		{
+			if($('#centerTabs').tabs('exists',node.text))
+			{
+				$('#centerTabs').tabs('select',node.text)
+			}else
+			{
+				if(node.attributes.url && node.attributes.url.length>0)
+				{
+					$.messager.progress({
+						text : '页面加载中....',
+						interval:100
+					
+					});
+					$('#centerTabs').tabs('add',{
+						title:node.text,
+						closable:true,
+						content : '<iframe src="'+node.attributes.url+'" frameborder="0" style="border:0;width:100%;height:100%;"></ifrane>',
+						tools:[{
+							iconCls : 'icon-mini-refresh',
+							handler	: function()
+							{
+								refreshTab(node.text);
+							}
+						}]
+					});
+				}else{
+					$('#centerTabs').tabs('add',{
+						title:node.text,
+						closable:true,
+						content: '<iframe src="error.jsp" frameborder="0" style="border:0;width:100%;height:100%;"></iframe>',
+						tools : [{
+							iconCls : 'icon-mini-refresh',
+							handler : function()
+							{
+								refreshTab(node.text);
+							}
+						}]
+					});
+				}
+			}
+		}
+	function refreshTab(title)
+	{
+		var tab = $('#centerTabs').tabs('getTab',title);
+		$('#centerTabs').tabs('update',{
+			tab : tab,
+			options : tab.panel('options')
+		});
+	}
+
+</script>
+<div id="centerTabs" class="easyui-tabs" style="width:500px;height:250px;">
+	<div title="首页" border="false" href="" style="overflow:hidden;">
+	</div>
+	<div id="tabsMenu" style="width : 120px;display:none;">
+		<div type="refresh">刷新</div>
+		<div class="menu-sep"></div>
+		<div type="close">关闭</div>
+		<div type="closeOther">关闭其他</div>
+		<div type="closeAll">关闭所有</div>
+	</div>
+</div>	

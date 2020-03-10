@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract local variable &apos;string&apos; from expression &apos;threadlocal.get()&apos;&#x0D;&#x0A;- Original project: &apos;threadlocal&apos;&#x0D;&#x0A;- Variable name: &apos;string&apos;&#x0D;&#x0A;- Destination method: &apos;com.hdquan.test.Test.main()&apos;&#x0D;&#x0A;- Variable expression: &apos;threadlocal.get()&apos;&#x0D;&#x0A;- Replace occurrences of expression with variable" description="Extract local variable &apos;string&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src&lt;com.hdquan.test{Test.java" name="string" replace="true" selection="193 0" stamp="1556092773942" version="1.0"/>
+</session>

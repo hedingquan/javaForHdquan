@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:aop="http://www.springframework.org/schema/aop"
+     xmlns:tx="http://www.springframework.org/schema/tx"
+      xmlns:p="http://www.springframework.org/schema/p" xmlns:cache="http://www.springframework.org/schema/cache"
+      xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+         http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+        http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context.xsd
+         http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+         http://www.springframework.org/schema/cache
+        http://www.springframework.org/schema/cache/spring-cache-4.3.xsd"  default-autowire="byName"> 
+
+    <import resource="classpath:datasource.xml"/>	
+	<context:component-scan base-package="com.hdquan.controller"></context:component-scan>
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="${jdbc.driver}"></property>
+        <property name="jdbcUrl" value="${jdbc.url}"></property>
+        <property name="user" value="${jdbc.username}"></property>
+        <property name="password" value="jdbc.password"></property>
+        <property name="initialPoolSize" value="3"></property>
+        <property name="maxPoolSize" value="10"></property>
+        <property name="maxStatements" value="100"></property>
+        <property name="acquireIncrement" value="2"></property>
+    </bean>
+       <!-- 加载数据源组件 -->        
+     <!-- 事务管理器 -->
+     <bean id="txManger" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+     	<property name="dataSource" ref="dataSource"></property>
+     </bean>
+     <!-- 声明式事务 -->
+     <tx:advice id="txAdvice" transaction-manager="txManger"> 
+     <tx:attributes>
+     	<tx:method name="ins*"/>
+     	<tx:method name="del*"/>
+     	<tx:method name="upd*"/>
+     	<tx:method name="*" read-only="true"/>
+     </tx:attributes>
+     </tx:advice>
+     <!-- 配置aop -->
+     <aop:config> 
+     	<aop:pointcut expression="execution(* com.hdquan.service.impl.*.*(..))" id="mypoint"/>
+   		<aop:advisor advice-ref="txAdvice" pointcut-ref="mypoint"/>
+     </aop:config>
+ </beans>

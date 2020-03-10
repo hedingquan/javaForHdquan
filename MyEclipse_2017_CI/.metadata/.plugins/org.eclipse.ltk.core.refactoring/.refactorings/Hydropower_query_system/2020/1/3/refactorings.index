@@ -1,0 +1,47 @@
+1578802453158	Rename resource 'HydropowerQuery.jsp'
+1578802555269	Copy file
+1578810807012	Delete element
+1578811883821	Rename type 'waterElectricService'
+1578811894113	Rename type 'waterElectricServiceImpl'
+1578811903341	Rename type 'waterElectricDaoImpl'
+1578811913978	Rename type 'waterElectricDao'
+1578815130360	Extract local variable 'split'
+1578815153950	Extract local variable 'split'
+1578829371507	Extract local variable 'limitSearchAccount'
+1578835141946	Copy file
+1578839383864	Copy file
+1578900440676	Extract local variable 'account'
+1578901467380	Extract local variable 'room'
+1578901490407	Extract local variable 'building'
+1578901522948	Extract local variable 'unit'
+1578903049639	Extract local variable 'teacherAccount'
+1578903570381	Extract local variable 'otherAccount'
+1578911264146	Extract local variable 'otherAccount'
+1578912340890	Extract local variable 'otherlimitSearchAccount'
+1578916224122	Extract local variable 'teacherAccount'
+1578919398591	Copy file
+1578919410656	Delete element
+1578919431130	Copy file
+1578921164249	Copy file
+1578921485509	Copy compilation unit
+1578921516705	Copy compilation unit
+1578921541289	Copy compilation unit
+1578921557083	Copy compilation unit
+1578921815603	Copy compilation unit
+1578921940658	Extract local variable 'allBuilding'
+1578923085226	Extract local variable 'limitBuilding'
+1578925409174	Copy compilation unit
+1578987101189	Copy file
+1578987117103	Rename resource 'Statistics.jsp'
+1578989857787	Copy file
+1578989889180	Extract local variable 'otherAccount'
+1578989898233	Extract local variable 'otherlimitSearchAccount'
+1578993310692	Extract local variable 'account'
+1578995189208	Extract local variable 'buildingName2'
+1578995669579	Extract local variable 'unitName'
+1578999145771	Extract local variable 'rooms'
+1578999315094	Extract local variable 'rooms'
+1579000879241	Extract local variable 'building'
+1579001015544	Extract local variable 'room'
+1579001192152	Extract local variable 'unit'
+1579001717751	Extract local variable 'list'

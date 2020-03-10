@@ -1,0 +1,11 @@
+1556890556958	Extract local variable 'writer'
+1556890609384	Extract local variable 'outputStream'
+1556892417805	Extract local variable 'outputStream'
+1556945074969	Extract local variable 'createGraphics'
+1556948469813	Extract local variable 'session'
+1556951194779	Extract local variable 'string'
+1556951499141	Extract local variable 'login'
+1556954923151	Copy file
+1556977734334	Copy files
+1556977782821	Copy files
+1556977878371	Copy file

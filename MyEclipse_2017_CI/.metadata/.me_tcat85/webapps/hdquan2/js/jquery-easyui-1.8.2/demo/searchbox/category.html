@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Search Category - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"63900",secure:"63905"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
+<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-187" data-genuitec-path="/hdquan2/WebRoot/js/jquery-easyui-1.8.2/demo/searchbox/category.html">
+	<h2 data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-187" data-genuitec-path="/hdquan2/WebRoot/js/jquery-easyui-1.8.2/demo/searchbox/category.html">Search Category</h2>
+	<p>Select a category and click search button or press enter key in input box to do searching.</p>
+	<div style="margin:20px 0;"></div>
+	<div class="easyui-panel" style="width:100%;max-width:400px;padding:30px 60px;">
+		<input class="easyui-searchbox" data-options="prompt:'Please Input Value',menu:'#mm',searcher:doSearch" style="width:100%">
+	</div>
+	<div id="mm">
+		<div data-options="name:'all',iconCls:'icon-ok'">All News</div>
+		<div data-options="name:'sports'">Sports News</div>
+	</div>
+	<script>
+		function doSearch(value,name){
+			alert('You input: ' + value+'('+name+')');
+		}
+	</script>
+
+</body>
+</html>

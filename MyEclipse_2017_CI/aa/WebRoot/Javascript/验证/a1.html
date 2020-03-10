@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+    <title>My JSP 'index.jsp' starting page</title>
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	  </head>
+  <body>
+	<table>
+				<tr>
+					<td>真实姓名(不能为空，没有其他要求)</td>
+					<td><input type="text" id="realname" name="realname"></td>
+				</tr>
+				<tr>
+					<td>登录名</td>
+					<td><input type="text" id="username" name="username"></td>
+				</tr>
+				<tr>
+					<td>密码</td>
+					<td><input type="password" id="psw" name="password"></td>
+				</tr>
+				<tr>
+					<td>重复密码</td>
+					<td><input type="password" id="psw2" name="password2"></td>
+				</tr>
+				<tr>
+					<td>性别</td>
+					<td><input type="radio" id="gender_male" value="m" name="gender"/>男
+					<td><input type="radio" id="gender_female" value="f" name="gender"/>女
+				</tr>
+				<tr>
+					<td>身份证</td>
+					<td><input type="text" id="cart" size="20"></td>
+				</tr>
+	</table>
+		<input type="button" id="ok" value="提交">
+ </body>
+  
+ <script language="JavaScript">
+ 		window.onload=function()
+ 		{
+ 			document.getElementById("ok").onclick=function()
+ 			{
+ 				var realname=document.getElementById("realname");
+ 				//alert(realname.value);
+ 				if(realname.value=="")
+ 				{
+ 				alert("你的真实姓名不能为空");
+ 				document.getElementById("realname").focus();//焦点
+ 				return false;
+ 				} 
+ 				
+ 					var username=document.getElementById("username");
+ 				if(username.value=="")
+ 				{
+ 				alert("你的登录名不能为空");
+ 				document.getElementById("username").focus();//焦点
+ 				return false;
+ 				}
+ 				
+ 				 //验证登录名的长度不能少于5个字符,使用构造方法
+ 				var pattern=new RegExp("^[A-Za-z0-9\u4e00-\u9fa5]{0,4}$")
+ 				var flag=pattern.test(username.value);
+ 				if(flag)
+ 				{
+ 					alert("你输出的登录名不能少于5个字符");
+ 					document.getElementById("username").focus();//焦点
+ 					return false;
+ 				}
+ 				
+ 			 //验证登录名的长度不能大于8个字符,使用文本格式
+ 				var pattern=/^[A-Za-z0-9\u4e00-\u9fa5]{9,}$/;
+ 				var flag=pattern.test(username.value);
+ 				if(flag)
+ 				{
+ 					alert("你输出的登录名不能大于8个字符");
+ 					document.getElementById("username").focus();//焦点
+ 					return false;
+ 				}
+ 				
+ 				var password=document.getElementById("psw");
+ 				if(password.value=="")
+ 				{
+ 				alert("你的密码不能为空");
+ 				document.getElementById("password").focus();//焦点
+ 				return false;
+ 				}
+ 				//验证密码长度不能小于6个字符
+ 				var pattern=/^[a-zA-Z0-9\u4e00-\u9fa5]{0,5}$/;
+ 				if(pattern.test(password.value))
+ 				{
+ 				alert("你输入的密码长度不能小于6个");
+ 				document.getElementById("psw").focus();
+ 				return false;
+ 				}
+ 				//验证密码长度不能大于12个字符
+ 				var pattern=/^[a-zA-Z0-9\u4e00-\u9fa5]{13,}$/;
+ 				if(pattern.test(password.value))
+ 				{
+ 				alert("你输入的密码长度不能大于12个");
+ 				document.getElementById("psw").focus();
+ 				return false;
+ 				}
+ 				
+ 				var password2=document.getElementById("psw2");
+ 				if(password2.value!=password.value)
+ 				{
+ 				alert("你输入的两次密码不一致");
+ 				document.getElementById("psw2").focus();
+ 				return false;
+ 				}
+ 				var flag=false;//true表示由选中的，false表示没有选中的
+ 					var genderElements=document.getElementsByName("gender");
+ 				//alert(genderElement.length);
+ 				for(var i=0;i<genderElements.length;i++)
+ 				{
+	 				if(genderElements[i].checked)
+	 				{
+	 				flag=true;
+	 				break;
+	 				}
+ 				}
+	 				if(!flag)
+	 				{
+	 				alert("你没有第三种性别可选");
+	 				return false;
+	 				}
+	 			
+	 			var cartElements=document.getElementById("cart");
+	 		if(cartElements.value=="")
+ 				{
+ 				alert("你的身份证不能为空");
+ 				document.getElementById("cart").focus();//焦点
+ 				return false;
+ 				}
+ 			//验证身份证是15
+ 			var len=cartElements.value.length;
+ 			if(len!=15&&len!=18)
+ 			{
+ 			alert("你的身份证输入有误");
+ 			document.getElementById("cart").focus();//焦点
+ 			return false;
+ 			}
+ 			if(len==15)
+ 			{
+ 				var pattern=/^\d{15}$/;
+ 				if(!pattern.test(cartElements.value))
+ 				{
+ 				alert("15位身份证输入有误");
+ 				document.getElementById("cart").focus();//焦点
+ 				return false;
+ 				}
+ 			}
+ 				//验证身份证是18
+ 				if(len==18)
+ 			{
+ 				var pattern=/^\d{18}|\d{17}[X]{1}$/;
+ 				//	var pattern1=/^\d{17}[X]{1}$/;
+ 				if(!pattern.test(cartElements.value))
+ 				{
+ 				alert("18位身份证输入有误");
+ 				document.getElementById("cart").focus();//焦点
+ 				return false;
+ 				}
+ 			}
+ 		
+ 		}
+ 	}
+ </script>
+</html>

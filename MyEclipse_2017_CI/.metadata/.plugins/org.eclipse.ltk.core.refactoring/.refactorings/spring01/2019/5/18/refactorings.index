@@ -1,0 +1,5 @@
+1556868654092	Rename type 'people'
+1556869217091	Extract local variable 'bean'
+1556869611480	Extract local variable 'beanDefinitionNames'
+1556872240594	Extract local variable 'createPeople'
+1556873044031	Extract local variable 'newInstance'

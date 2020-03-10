@@ -1,0 +1,5 @@
+PERSISTED_SERVER_ID=com.genuitec.embedded.tomcat.server.v85
+PERSISTED_SERVER_MODE=run
+create-server=true
+do-not-show-remove-module-warning=true
+eclipse.preferences.version=1

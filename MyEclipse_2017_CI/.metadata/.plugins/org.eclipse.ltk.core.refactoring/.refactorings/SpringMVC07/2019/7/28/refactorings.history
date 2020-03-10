@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;DemoInterceptor.java&apos; to &apos;SpringMVC07/src/com.hdquan.interceptor&apos;&#x0D;&#x0A;- Original project: &apos;SpringMVC07&apos;&#x0D;&#x0A;- Destination element: &apos;SpringMVC07/src/com.hdquan.interceptor&apos;&#x0D;&#x0A;- Original element: &apos;com.hdquan.interceptor.DemoInterceptor.java&apos;" description="Copy compilation unit" destination="/src&lt;com.hdquan.interceptor" element1="/src&lt;com.hdquan.interceptor{DemoInterceptor.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1562660468050" units="1" version="1.0"/>
+</session>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdquan.mapper.AccountMapper">
+	<select id="selByAccnoPwd" resultType="Account" parameterType="Account">
+	select * from account where accno=#{accNO} and password=#{password}
+	</select>
+	<select id="selByAccnoName" resultType="Account" parameterType="Account">
+	select * from account where accno=#{accNO} and name=#{name}
+	</select>
+	<update id="updBanlanceAccount" parameterType="Account">
+	update account set balance=balance+#{balance} where accno=#{accNO}
+	</update>
+</mapper>

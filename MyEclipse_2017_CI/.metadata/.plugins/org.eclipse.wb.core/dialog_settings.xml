@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.wb.internal.core.utils.ui.dialogs.StringsDialog">
+		<item value="501" key="x"/>
+		<item value="364" key="width"/>
+		<item value="192" key="y"/>
+		<item value="343" key="height"/>
+	</section>
+	<section name="org.eclipse.wb.internal.core.model.util.RenameConvertSupport$RenameDialog">
+		<item value="420" key="x"/>
+		<item value="525" key="width"/>
+		<item value="204" key="y"/>
+		<item value="319" key="height"/>
+	</section>
+	<section name="org.eclipse.wb.internal.core.editor.palette.dialogs.ComponentAddDialog">
+		<item value="368" key="x"/>
+		<item value="629" key="width"/>
+		<item value="165" key="y"/>
+		<item value="398" key="height"/>
+	</section>
+	<section name="org.eclipse.wb.internal.core.editor.palette.dialogs.PalettePreferencesDialog">
+		<item value="414" key="x"/>
+		<item value="538" key="width"/>
+		<item value="184" key="y"/>
+		<item value="360" key="height"/>
+	</section>
+	<section name="org.eclipse.wb.internal.core.editor.palette.dialogs.ComponentEditDialog">
+		<item value="539" key="x"/>
+		<item value="556" key="width"/>
+		<item value="185" key="y"/>
+		<item value="368" key="height"/>
+	</section>
+	<section name="org.eclipse.wb.internal.core.editor.palette.dialogs.CategoryAddDialog">
+		<item value="117" key="x"/>
+		<item value="525" key="width"/>
+		<item value="198" key="y"/>
+		<item value="418" key="height"/>
+	</section>
+	<section name="org.eclipse.wb.internal.core.model.property.editor.string.StringPropertyDialog">
+		<item value="418" key="x"/>
+		<item value="529" key="width"/>
+		<item value="174" key="y"/>
+		<item value="380" key="height"/>
+	</section>
+</section>

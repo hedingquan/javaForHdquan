@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>My JSP 'index.jsp' starting page</title>
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	  </head>
+  
+  <body>
+  	你的爱好很广泛
+  	<br>
+  	<input type="checkbox" name="checkItems" id="checkItems" value="全选/全不选">全选/全不选
+  	<br>
+  	<input type="checkbox" name="items" value="足球" checked="checked">足球
+  <input type="checkbox" name="items" value="篮球">篮球
+  <input type="checkbox" name="items" value="游泳">游泳
+  <input type="checkbox" name="items" value="唱歌">唱歌
+  <br>
+  <input type="button" name="checkall" id="checkall" value="全选"/>
+   <input type="button" name="checkall" id="checkallno" value="全不选"/>
+    <input type="button" name="checkall" id="check_revsern" value="反选"/>
+  </body>
+  	 <script language="JavaScript">
+  	 document.getElementById("checkall").onclick=function()
+  	 {//获取所有的复选框
+  	 var checkElements=document.getElementsByName("items");
+  	 for(var i=0;i<checkElements.length;i++)
+  	 {
+  	 var checkElement=checkElements[i];
+  	 //方法一： checkElement.setAttribute("checked", "checked");--不是所有游览器都支持，但下面的那种所有游览器都支持
+  	//方法二：实现选中： checkElement.checked="checked";实现不选中：checkElement.checked=null;
+  		checkElement.checked="checked";
+  	 }
+  	 }
+  	 
+  	 document.getElementById("checkallno").onclick=function()
+  	 {
+  	  	 var checkElements=document.getElementsByName("items");
+  	 	 for(var i=0;i<checkElements.length;i++)
+  	 {
+  	 var checkElement=checkElements[i];
+  	 checkElement.checked=null;
+  	 }
+  	 }
+  	 
+  	 document.getElementById("check_revsern").onclick=function()
+  	 {
+  	  var checkElements=document.getElementsByName("items");
+  	 	 for(var i=0;i<checkElements.length;i++)
+  	 {
+  	 var checkElement=checkElements[i];
+  	 if(checkElement.checked)
+  	 {
+  	 checkElement.checked=null;
+  	 }
+  	 else
+  	 {
+  	  checkElement.checked="checked";
+  	 }
+  	 }
+  	 }
+  	 
+  	   	 document.getElementById("checkItems").onclick=function()
+  	 {
+  	  var checkElements=document.getElementsByName("items");
+  	  if(this.checked)
+  	  {
+  	   	 	 for(var i=0;i<checkElements.length;i++)
+		  	 {
+		  	 var checkElement=checkElements[i];
+		//   checkElement.setAttribute("checked", "checked");
+		checkElement.checked="checked";
+		  	 }
+  	  } else
+  	  {
+  	   for(var i=0;i<checkElements.length;i++)
+		  	 {
+		  	 var checkElement=checkElements[i];
+		  	 checkElement.checked=null;
+		  	 }
+  	  }
+  	 }
+		 </script>
+</html>

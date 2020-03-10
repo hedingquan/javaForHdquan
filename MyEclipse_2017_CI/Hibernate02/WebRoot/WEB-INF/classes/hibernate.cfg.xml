@@ -1,0 +1,23 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory name="foo">
+		<property name="show_sql">true</property>
+		<property name="hbm2ddl.auto">create</property>
+		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/hib</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">hedingquan123</property>
+		
+		<!-- <mapping resource="com/hdquan/pojo/Department.hbm.xml"/>
+<mapping resource="com/hdquan/pojo/Employee.hbm.xml"/>
+		 -->
+<mapping resource="com/hdquan/pojo/Company.hbm.xml"/>
+<mapping resource="com/hdquan/pojo/Address.hbm.xml"/>
+<mapping resource="com/hdquan/pojo/Course.hbm.xml"/>
+<mapping resource="com/hdquan/pojo/Student.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>

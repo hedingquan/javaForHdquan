@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Basic EasyLoader - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../easyloader.js"></script>
+<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"63900",secure:"63905"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
+<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-113" data-genuitec-path="/hdquan3/WebRoot/js/jquery-easyui-1.8.2/demo/easyloader/basic.html">
+	<h2 data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-113" data-genuitec-path="/hdquan3/WebRoot/js/jquery-easyui-1.8.2/demo/easyloader/basic.html">Basic EasyLoader</h2>
+	<div class="demo-info">
+		<div class="demo-tip icon-tip"></div>
+		<div>Click the buttons below to load components dynamically.</div>
+	</div>
+	<div style="margin:10px 0;">
+		<a href="#" class="easyui-linkbutton" onclick="load1()">Load Calendar</a>
+		<a href="#" class="easyui-linkbutton" onclick="load2()">Load Dialog</a>
+		<a href="#" class="easyui-linkbutton" onclick="load3()">Load DataGrid</a>
+	</div>
+	<div id="cc"></div>
+	<div id="dd"></div>
+	<table id="tt"></table>
+	<script type="text/javascript" src="../../easyloader.js"></script>
+	<script>
+		function load1(){
+			using('calendar', function(){
+				$('#cc').calendar({
+					width:180,
+					height:180
+				});
+			});
+		}
+		function load2(){
+			using(['dialog','messager'], function(){
+				$('#dd').dialog({
+					title:'Dialog',
+					width:300,
+					height:200
+				});
+				$.messager.show({
+					title:'info',
+					msg:'dialog created'
+				});
+			});
+		}
+		function load3(){
+			using('datagrid', function(){
+				$('#tt').datagrid({
+					title:'DataGrid',
+					width:300,
+					height:200,
+					fitColumns:true,
+					columns:[[
+						{field:'productid',title:'Product ID',width:100},
+						{field:'productname',title:'Product Name',width:200}
+					]],
+					data: [
+						{"productid":"FI-SW-01","productname":"Koi"},
+						{"productid":"K9-DL-01","productname":"Dalmation"},
+						{"productid":"RP-SN-01","productname":"Rattlesnake"},
+						{"productid":"RP-LI-02","productname":"Iguana"},
+						{"productid":"FL-DSH-01","productname":"Manx"},
+						{"productid":"FL-DLH-02","productname":"Persian"},
+						{"productid":"AV-CB-01","productname":"Amazon Parrot"}
+					]
+				});
+			});
+		}
+	</script>
+
+</body>
+</html>

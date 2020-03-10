@@ -1,0 +1,161 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+ 	<jsp:include page="BaseJsp.jsp" />
+	 <script type="text/javascript">	
+	  var datagrid;
+	var searchForm;
+	var OtherhForm;
+	var deletedata;
+	 $(function(){
+	 searchForm=$('#form1').form();
+	 OtherhForm=$('#qq').form();
+	  datagrid=$('#datagrid').datagrid({
+		url:'allBuilding.action',
+		iconCls:'icon-save',
+		pagination:true,
+		pageSize:30,
+		pageList:[ 10,20,30,40],
+		fit:true,
+		fitColums:false,
+		nowarp:false,
+		border:false,
+		idField:'id',
+		frozenColumns : [ [
+		  {field:'controller',
+           title:'修改',
+           width:50,
+           align : 'center',
+           formatter : function (value,row,index) { return '  <a href="javascript:void(0)" onclick="updateInformation('+index+');">修改</a>';  }
+            },
+			{
+            field:'bId',
+            title:'序号',
+            width:200,
+            align : 'center'
+            }
+            ]],
+             columns:[[
+           {
+            field:'buildingName',
+            title:'楼名',
+            width:200,
+            align : 'center'
+             },{
+            field:'category',
+            title:'类型',
+            width:200,
+            align : 'center'
+            }
+            ]]
+	 	});
+	 	});
+	 search_user=function (){$('#datagrid').datagrid('load',{buildingName:$('#buildingName1').val()});	}
+	 	   
+	 	    clear_data=function()
+			{
+			$('#datagrid').datagrid('load',{});
+			searchForm.find('input').val('');
+			}
+			
+	updateInformation =function(i)
+	{
+		var rows = datagrid.datagrid('getRows'); 
+		console.info(rows[i]);
+		deletedata=rows[i];
+		 $('#win1').panel('open',true);
+		 var f=$('#qq').form();
+		 	f.form('load',{
+		 	bId : rows[i].bId,
+  			buildingName : rows[i].buildingName,
+  			category : rows[i].category
+  		});
+  		 rows =undefined;
+	}
+	 
+	 	    add_user=function ()
+	 	    {
+	 	     $('#win1').panel('open',true);
+	 	      OtherhForm.form('clear');
+	 	       OtherhForm.form('submit', {
+		        url:'AddBuildingInfo.action',
+		        	success: function(){
+									$('#win1').window('close');
+								    datagrid.datagrid('load',{});
+							}
+	 	    });
+	 	    }
+	 	    userSave=function()
+	 	    {
+	 	     OtherhForm.form('submit', {
+		        url:'AddBuildingInfo.action',
+		        	success: function(){
+								$('#win1').window('close');
+								    datagrid.datagrid('load',{});
+							}
+	 	    });
+	 	    }
+	 	    
+	 	    userDelete = function()
+	 	    {
+	 	    			 $.ajax({
+		  					url : 'deleteBuilding.action',
+		  					data : {
+		  						id : deletedata.id
+		  					},
+		  					dataType : 'json'
+		  				});
+	 	  						  $('#win1').window('close');
+								    datagrid.datagrid('load',{});
+		  						$.messager.show({
+		  							title : '提示',
+		  							msg : '删除成功！'
+		  						});
+	 	    }
+	 </script>
+  </head>
+  	
+  <body>
+  		  <div id="cc" class="easyui-layout" style="width:100%;height:100%;align:center">
+			    <div id="form1" data-options="region:'north'" style="width:110%;height:50px">
+			    	 <input id="buildingName1" class="easyui-textbox" prompt='楼名' name="id1"/>
+				      <a href="javascript:void(0);" class="easyui-linkbutton" onclick="clear_data();">清空</a>
+				 	<a href="javascript:void(0);" class="easyui-linkbutton" onclick="search_user();">查询</a>
+				 	 <a href="javascript:void(0);" class="easyui-linkbutton" onclick="add_user();">新增</a>
+			    </div>
+		    <div data-options="region:'center'">
+						 <table id="datagrid"></table>
+		        </div>
+	          </div>
+	    <div id="win1" class="easyui-window" title="楼房管理编辑" style="width:600px;height:400px" closed='true'
+	   data-options="iconCls:'icon-save',modal:true" align="center">
+	   <form id="qq">
+	  				 <h3 align="center">楼房管理编辑</h3>
+	   				 <div style="margin-bottom:20px" align="center" >
+	   				    <label for="name1" style="display:none;">序号</label>
+					      <input name="id1" id="id1" style="display:none;" editable='false'/>
+					       </div>
+		    	<div style="margin-bottom:20px" align="center">
+			      <label for="buildingName">楼名</label>
+			       <input class="easyui-textbox" type="text" name="buildingName" id="buildingName" style="width:150px" required='true'/>
+			       &nbsp;&nbsp;&nbsp;
+			        <label for="category">类型</label>
+			       <select class="easyui-combobox" name="category" id="category" style="width:150px" required='true'/>
+					    <option value="自动">自动</option>
+					    <option value="教工">教工</option>
+					</select>
+			     </div>
+			<a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-save'" onclick="userSave();">保存</a>
+			<a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-delete'" onclick="userDelete();">删除</a>
+		</form>
+		</div>
+  </body>
+</html>

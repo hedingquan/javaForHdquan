@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee                     
+  http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+		<context-param>
+			<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:applicationContext.xml;classpath:springmvc.xml</param-value>	
+		</context-param>
+		  <context-param>
+		   <param-name>Using_Role</param-name>
+		   <param-value>0</param-value>
+		</context-param>
+		
+		<filter>
+			<filter-name>MyFilter</filter-name>
+			<filter-class>com.hdquan.filter.LoggerMDCFilter</filter-class>
+		</filter>
+		<filter-mapping>
+			<filter-name>MyFilter</filter-name>
+			<url-pattern>/role.action</url-pattern>
+		</filter-mapping>
+		
+		<filter>
+			<filter-name>shiroFilter</filter-name>
+			<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+			<init-param>
+				<param-name>targetFilterLifecycle</param-name>
+				<param-value>true</param-value>
+			</init-param>
+			<init-param>
+				<param-name>targetBeanName</param-name>
+				<param-value>shiroFilter</param-value>
+			</init-param>
+		</filter>
+		<filter-mapping>
+			<filter-name>shiroFilter</filter-name>
+			<url-pattern>/*</url-pattern>
+		</filter-mapping>
+		
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<servlet>
+			<servlet-name>springmvc</servlet-name> 
+			<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+			<init-param>
+				<param-name>contextConfigLocation</param-name>
+				<param-value>classpath:springmvc.xml</param-value>
+			</init-param>
+			<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>springmvc</servlet-name>
+<!-- 可以配置/，此工程所有请求全部由springmvc解析，此种方式可以实现restful方式，需要特殊处理对静态的解析不能由spring
+	可以配置*.do或.action，所有请求的url扩展名为.do或.action由springmvc解析，此种方法常用不可以/*,如果配置了
+ -->
+		<url-pattern>*.action</url-pattern>
+	</servlet-mapping>
+
+<!-- Kaptcha Servlet -->
+<servlet>
+	<servlet-name>Kaptcha</servlet-name>
+	<servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
+	<!-- 参数: 验证码图片高度 -->
+	<init-param>
+		<param-name>kaptcha.image.width</param-name>
+		<param-value>200</param-value>
+	</init-param>
+</servlet>
+<servlet-mapping>
+	<servlet-name>Kaptcha</servlet-name>
+	<url-pattern>/kaptcha.jpg</url-pattern>
+</servlet-mapping>
+
+		<filter>
+			<filter-name>encoding</filter-name>
+			<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+		</filter>
+		<filter-mapping>
+			<filter-name>encoding</filter-name>
+			<url-pattern>/*</url-pattern>
+		</filter-mapping>
+		<welcome-file-list>
+			<welcome-file>index.html</welcome-file>
+			<welcome-file>index.htm</welcome-file>
+			<welcome-file>index.jsp</welcome-file>
+			<welcome-file>default.html</welcome-file>
+		</welcome-file-list>
+<jsp-config>
+    <taglib>
+        <taglib-uri>http://www.codecoord.com</taglib-uri>
+        <taglib-location>/hdquan2/WebRoot/WEB-INF/c.tld</taglib-location>
+    </taglib>
+</jsp-config>
+</web-app>

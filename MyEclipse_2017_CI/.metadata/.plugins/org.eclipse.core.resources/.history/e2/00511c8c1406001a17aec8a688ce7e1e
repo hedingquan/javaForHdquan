@@ -1,0 +1,40 @@
+package com.controller;
+
+
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.Service.ApplyService;
+import com.pojo.Apply;
+import com.pojo.Work; 
+
+@Controller
+public class ApplyController {
+
+	@Autowired
+	private ApplyService applyService;
+
+	@RequestMapping("getAllApply.action")
+	public void getAllApply(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException, IllegalAccessException, InvocationTargetException
+	{
+		List<Apply> allApply = applyService.getAllApply();
+		req.setAttribute("apply", allApply);
+		req.getRequestDispatcher("delete_apply.jsp").forward(req, res);
+	}
+	
+	@RequestMapping("delete_apply.action")
+	public void delete_apply(HttpServletRequest req, HttpServletResponse res,String apply_id) throws IOException, ServletException, IllegalAccessException, InvocationTargetException
+	{
+		applyService.DeleteApply(applyService.getApply(apply_id));
+		req.getRequestDispatcher("work.jsp").forward(req, res);
+	}
+}

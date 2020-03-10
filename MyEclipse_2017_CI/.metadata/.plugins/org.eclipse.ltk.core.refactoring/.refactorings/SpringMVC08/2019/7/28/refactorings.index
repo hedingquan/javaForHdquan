@@ -1,0 +1,14 @@
+1562661114731	Delete element
+1562661242756	Move 'main.jsp' to 'page'
+1562661278742	Delete element
+1562661306609	Delete element
+1562661422628	Move 'page' to 'WEB-INF'
+1562661435034	Delete element
+1562661438171	Delete element
+1562662923779	Delete element
+1562662932778	Delete element
+1562664255666	Delete element
+1562664391144	Extract local variable 'attribute'
+1562664828831	Extract local variable 'requestURI'
+1562669698149	Delete element
+1562817031301	Copy folder

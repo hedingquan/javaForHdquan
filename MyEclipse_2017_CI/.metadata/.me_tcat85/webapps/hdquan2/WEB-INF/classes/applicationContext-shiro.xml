@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:aop="http://www.springframework.org/schema/aop"
+     xmlns:tx="http://www.springframework.org/schema/tx"
+      xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+         http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+        http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context.xsd
+         http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd"> 
+        
+    <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean"> 
+       		<property name="staticMethod" value="org.apache.shiro.SecurityUtils.setSecurityManager"></property>
+       		<property name="arguments" ref="securityManager"></property>
+       </bean> 
+        
+ <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+  	<property name="securityManager" ref="securityManager"/>
+  	
+	<!-- loginUrl认证提交地址，如果没有认证将会请求此地址进行认证，请求此地址江油formAuthenticationFilter进行拦截表单认证-->
+	<property name="loginUrl" value="/login.action"/>
+	
+	<!--通过unauthorizedUrl指定没有权限操作时跳转页面-->
+	<property name="unauthorizedUrl" value="/refuse.jsp"/>
+	
+	<property name="filters">
+  			<map>
+  				<!-- FormAuthenticationFilter是基于表单认证的过滤器 -->
+  					<entry key="authc" value-ref="formAuthenticationFilter"/>
+  					<entry key="authcRole" value-ref="RoleFormAuthenticationFilter"/>
+  			</map>
+  		</property>
+	
+  	<property name="filterChainDefinitions">
+    <value>
+        <!-- /所有的url都要登录-->
+     	/kaptcha.jpg=anon
+        /js/**=anon
+         /login.jsp=anon
+      /login.action=authc
+        /logout.action = logout 
+        /refuse.jsp = anon
+      /role.action=authcRole
+        /**=authc
+  	  </value>
+	</property>
+  </bean>
+ 			<bean id="RoleFormAuthenticationFilter" class="com.hdquan.shiro.realm.RoleFormAuthenticationFilter" />
+		<bean id="formAuthenticationFilter" class="com.hdquan.shiro.realm.CustomFormAuthenticationFilter">
+				<!-- 表单中账号的input名称 -->
+					<property name="usernameParam" value="username"/>
+					<!-- 表单中密码的input名称 -->
+					<property name="passwordParam" value="password"/>
+					<!-- 记住我input的名称 -->
+					<property name="rememberMeParam" value="rememberMe"/>
+					<property name="loginUrl" value="/login.action"></property>
+			</bean>
+
+<!-- 保证实现了shiro内部的lifecycle函数的bean执行 
+<bean id="LifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"></bean>
+-->
+   <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager"> 
+  	<!-- 	<property name="realm" ref="customRealm"/> -->
+  	
+			  			<property name="authenticator">
+			            <bean class="org.apache.shiro.authc.pam.ModularRealmAuthenticator">
+			                <property name="authenticationStrategy">
+			                    <bean class="org.apache.shiro.authc.pam.AllSuccessfulStrategy"/>
+			                </property>
+			            </bean>
+			      		  </property>
+			      		   <property name="realms">
+					            <list>
+					                <bean class="com.hdquan.shiro.realm.CustomRealm">
+					                    <property name="credentialsMatcher">
+					                        <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+					                            <!--指定加密算法-->
+					                            <property name="hashAlgorithmName" value="MD5"/>
+					                            <!--指定对密码连续进行5轮md5加密-->
+					                            <property name="hashIterations" value="1"/>
+					                        </bean>
+					                    </property>
+					                </bean>
+					            </list>
+					        </property>
+			      		  
+  		<property name="sessionManager" ref="sessionManager" />
+  		<property name="rememberMeManager" ref="rememberMeManager"/>
+  	</bean>
+  	
+  <bean id="customRealm" class="com.hdquan.shiro.realm.CustomRealm">
+ </bean>
+ 
+ <bean id="SessionDAO" class="org.apache.shiro.session.mgt.eis.MemorySessionDAO"></bean>
+ 	<bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+        <!-- session的失效时长，单位毫秒 -->
+        <property name="globalSessionTimeout" value="600000"/>
+        <!-- 删除失效的session -->
+        <property name="deleteInvalidSessions" value="true"/>
+        <!-- 踢出用户 -->
+        <property name="SessionDAO" ref="SessionDAO"></property>
+    </bean>
+    
+ 	<bean id="rememberMeManager" class="org.apache.shiro.web.mgt.CookieRememberMeManager">
+			<property name="cookie" ref="rememberMeCookie"/>
+		</bean>
+ 
+ 	<bean id="rememberMeCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
+		<!-- constructor-arg是指构造参数， rememberMe是cookie的名字-->
+			<constructor-arg value="rememberMe"/>
+			<!-- 记住我cookie生效时间30天 -->
+			<property name="maxAge" value="2592000"/>
+		</bean>
+ 
+ </beans>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 	package="com.hdquan.pojo">
+
+	<class name="Person" table="_person" lazy="true" discriminator-value="1">
+		<id name="id">
+			<generator class="native"/>
+		</id>
+		<discriminator column="type"></discriminator><!-- 添加一个字段，名字为type -->
+		<property name="name"/>
+		<subclass name="Student" discriminator-value="2">
+			<property name="school"/>
+			<property name="studentNum"/>
+		</subclass>
+		<subclass name="Teacher" discriminator-value="3">
+			<property name="salary"/>
+			<property name="teacherNum"/>
+		</subclass>
+	</class>
+	
+</hibernate-mapping>

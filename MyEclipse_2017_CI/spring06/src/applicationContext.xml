@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+     
+      <bean id="demo" class="com.hdquan.test.Demo"></bean>    
+      <bean id="myAdvice" class="com.hdquan.advice.MyAdvice"></bean>
+      <aop:config>
+      <aop:aspect ref="myAdvice">
+     		 <aop:pointcut expression="execution(* com.hdquan.test.Demo.demo1(String,int)) and args(name1,age1)" id="mypoint"/>
+      		<aop:before method="mybefore" pointcut-ref="mypoint" arg-names="name1,age1"/>
+      		<aop:pointcut expression="execution(* com.hdquan.test.Demo.demo1(String)) and args(name1)" id="mypoint1"/>
+      		<aop:before method="mybefore1" pointcut-ref="mypoint1" arg-names="name1"/>
+      		<!--  <aop:after method="myafter" pointcut-ref="mypoint"/>
+      		<aop:after-returning method="myaftering" pointcut-ref="mypoint"/>
+      		<aop:after-throwing method="mythrow" pointcut-ref="mypoint"/>
+      		<aop:around method="myarround" pointcut-ref="mypoint"/>
+      		-->
+      </aop:aspect>
+      </aop:config>
+ </beans>

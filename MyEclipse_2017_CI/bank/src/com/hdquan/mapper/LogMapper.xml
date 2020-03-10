@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdquan.mapper.LogMapper">
+	<insert id="insLog" parameterType="log">
+	insert into Log (accOut,accIn,money) values (#{accOut},#{accIn},#{money}) 
+	</insert>
+	<select id="selByPage" parameterType="map" resultType="log">
+	select * from log limit #{pageStart},#{pageSize}
+	</select>
+	<select id="selCount" resultType="long">
+	select count(*) from log
+	</select>
+</mapper>

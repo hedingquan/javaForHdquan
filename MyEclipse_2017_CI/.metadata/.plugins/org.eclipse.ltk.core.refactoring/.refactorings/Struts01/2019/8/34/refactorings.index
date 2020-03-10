@@ -1,0 +1,6 @@
+1566326343022	Extract local variable 'context'
+1566326394805	Extract local variable 'valueStack'
+1566328908639	Copy compilation unit
+1566476004987	Extract local variable 'request'
+1566566742029	Extract local variable 'request'
+1566566773815	Extract local variable 'attribute'

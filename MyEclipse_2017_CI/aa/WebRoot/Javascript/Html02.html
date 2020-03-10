@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>My JSP 'index.jsp' starting page</title>
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	  </head>
+  
+  <body>
+  	<center>
+ 	 <br><br>
+	添加用户:<br><br>
+	姓名：<input type="text" name="name" id="name"/><br><br>&nbsp;&nbsp;
+	email<input type="text" name="email" id="email"/><br><br>&nbsp;&nbsp;
+	电话:<input type="text" name="tel" id="tel"/><br><br>
+	<button id="addUser">提交</button>
+		 <br><br>
+		 <hr>
+		  <br><br>
+		  <table id="usertable" border="1">
+		  	<tbody>
+		  		<tr>
+		  			<th>姓名</th>
+		  			<th>email</th>
+		  			<th>电话</th>
+		  			<th>&nbsp;</th>
+		  		</tr>
+		  		<tr>
+		  			<td> Tom</td>
+		  			<td> Tom@tom.com</td>
+		  			<td> 500</td> 
+		  			<td><a href="deleteEmp?id=Tom">Delete</a></td>
+		  		</tr>
+		  		<tr>
+		  			<td> JEY</td>
+		  			<td> JEY@JEY.com</td>
+		  			<td> 50000</td> 
+		  			<td><a href="deleteEmp?id=JEY">Delete</a></td>
+		  		</tr>
+		  	</tbody>
+		  </table>
+	 </center> 
+  </body>
+  
+ <script language="JavaScript">
+		  	window.onload=function()
+		  	{
+		  	document.getElementById("addUser").onclick=function()
+		  	{
+		  		//获取文本框的值
+		  			var nameValue=document.getElementById("name").value;
+		  			var emailValue=document.getElementById("email").value;
+		  			var telValue=document.getElementById("tel").value;
+		  			
+		  		//定义tr，增加td到tr
+		  			var nameTdElement=document.createElement("td");
+		  			var nameTextElemt=document.createTextNode(nameValue);
+		  			nameTdElement.appendChild(nameTextElemt);
+		  			
+		  			var emailTdElement=document.createElement("td");
+		  			var emailTextElemt=document.createTextNode(emailValue);
+		  			emailTdElement.appendChild(emailTextElemt);
+		  			
+		  			var telTdElement=document.createElement("td");
+		  			var telTextElemt=document.createTextNode(telValue);
+		  			telTdElement.appendChild(telTextElemt);
+		  			
+		  			var aTdElement=document.createElement("td");
+		  			var aElement=document.createElement("a");
+		  			aElement.setAttribute("href", "deleteEmp?id="+nameValue);
+		  				
+		  				var deleteTextElement=document.createTextNode("delete");
+		  				aElement.appendChild(deleteTextElement);
+		  				aTdElement.appendChild(aElement);
+		  				
+		  				var trElement=document.createElement("tr");
+		  				trElement.appendChild(nameTdElement);
+		  				trElement.appendChild(emailTdElement);
+		  				trElement.appendChild(telTdElement);
+		  				trElement.appendChild(aTdElement);
+		  		//获取table
+		  		var tableElement=document.getElementById("usertable");
+		  		var tbodyElement=document.createElement("tbody");
+		  		tbodyElement.appendChild(trElement);
+		  		tableElement.appendChild(tbodyElement);
+		  		//给aElement增加单击事件
+		  		aElement.onclick=function()
+		  		{
+		  		//加上return--使网页的超链接失效
+		  		return deleteTr(aElement);
+		  		}
+		  	}
+		  	}
+		  	
+	//定义函数删除tr	  	
+function deleteTr(aElement)
+{
+
+	var name=aElement.parentNode.parentNode.firstChild.firstChild.nodeValue;
+	//如果点击确定flag=true，点击取消flag=false
+	var flag=window.confirm("你真的要删除["+name+"]这个用户吗？");
+	alert(flag);
+	if(!flag)
+	{
+	//加上return--使网页的超链接失效
+	return false;
+	}
+
+	//获取tr元素
+	var trElement=aElement.parentNode.parentNode;
+	//获取table
+	var tableElement=aElement.parentNode.parentNode.parentNode;
+		//删除
+	tableElement.removeChild(trElement);
+	//加上return--使网页的超链接失效,防止跳转的情况
+	return false;
+}	  	
+		  	
+		  </script>
+</html>

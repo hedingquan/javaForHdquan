@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+    <title>My JSP 'index.jsp' starting page</title>
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	  </head>
+  <body>
+		<table border="1">
+			<tr>
+				<td>操作</td>
+				<td>客户id</td>
+				<td>客户名称</td>
+			</tr>
+			<tr>
+				<td><input type="button" value="选择" id="ss" onclick="viewData('001','深圳华为')"></td>
+				<td>001</td>
+				<td>深圳华为</td>
+			</tr>
+			<tr>
+				<td><input type="button" value="选择" onclick="viewData('002','拥有软件')"></td>
+				<td>002</td>
+				<td>拥有软件</td>
+			</tr>
+		</table>
+ </body>
+  
+ <script language="JavaScript">
+		function viewData(cid,cname)
+	{
+	//获取a1.html页面的引用
+	var sdata=window.opener;
+/* 	sdata.document.getElementById("cid").value=cid;
+	sdata.document.getElementById("cname").value=cname; */
+	sdata.setValue(cid,cname);
+	window.close();
+	}
+ </script>
+</html>

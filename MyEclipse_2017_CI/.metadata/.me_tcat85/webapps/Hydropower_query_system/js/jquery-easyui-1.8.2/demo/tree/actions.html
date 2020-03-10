@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Tree Actions - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"63900",secure:"63905"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
+<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-244" data-genuitec-path="/Hydropower_query_system/WebRoot/js/jquery-easyui-1.8.2/demo/tree/actions.html">
+	<h2 data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-244" data-genuitec-path="/Hydropower_query_system/WebRoot/js/jquery-easyui-1.8.2/demo/tree/actions.html">Tree Actions</h2>
+	<p>Click the buttons below to perform actions.</p>
+	<div style="margin:20px 0;">
+		<a href="#" class="easyui-linkbutton" onclick="collapseAll()">CollapseAll</a>
+		<a href="#" class="easyui-linkbutton" onclick="expandAll()">ExpandAll</a>
+		<a href="#" class="easyui-linkbutton" onclick="expandTo()">ExpandTo</a>
+		<a href="#" class="easyui-linkbutton" onclick="getSelected()">GetSelected</a>
+	</div>
+	<div class="easyui-panel" style="padding:5px">
+		<ul id="tt" class="easyui-tree" data-options="url:'tree_data1.json',method:'get',animate:true"></ul>
+	</div>
+	<script type="text/javascript">
+		function collapseAll(){
+			$('#tt').tree('collapseAll');
+		}
+		function expandAll(){
+			$('#tt').tree('expandAll');
+		}
+		function expandTo(){
+			var node = $('#tt').tree('find',113);
+			$('#tt').tree('expandTo', node.target).tree('select', node.target);
+		}
+		function getSelected(){
+			var node = $('#tt').tree('getSelected');
+			if (node){
+				var s = node.text;
+				if (node.attributes){
+					s += ","+node.attributes.p1+","+node.attributes.p2;
+				}
+				alert(s);
+			}
+		}
+	</script>
+</body>
+</html>

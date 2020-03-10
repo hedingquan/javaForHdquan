@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Custom Pagination Buttons - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"63900",secure:"63905"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
+<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-165" data-genuitec-path="/hdquan3/WebRoot/js/jquery-easyui-1.8.2/demo/pagination/custombuttons.html">
+	<h2 data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-165" data-genuitec-path="/hdquan3/WebRoot/js/jquery-easyui-1.8.2/demo/pagination/custombuttons.html">Custom Pagination Buttons</h2>
+	<p>The customized buttons can be appended to page bar.</p>
+	<div style="margin:20px 0;"></div>
+	<div class="easyui-panel">
+		<div class="easyui-pagination" data-options="total:114,buttons:buttons"></div>
+	</div>
+	<script>
+		var buttons = [{
+			iconCls:'icon-add',
+			handler:function(){
+				alert('add');
+			}
+		},{
+			iconCls:'icon-cut',
+			handler:function(){
+				alert('cut');
+			}
+		},{
+			iconCls:'icon-save',
+			handler:function(){
+				alert('save');
+			}
+		}];
+	</script>
+</body>
+</html>

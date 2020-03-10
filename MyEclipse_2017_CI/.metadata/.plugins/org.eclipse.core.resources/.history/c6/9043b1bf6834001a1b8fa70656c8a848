@@ -1,0 +1,10 @@
+package com.hdquan.pojo;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Building {
+	private int bId;
+	private String buildingName;
+	private String category;
+}

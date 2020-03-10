@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Complex Toolbar on Dialog - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"63900",secure:"63905"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
+<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-102" data-genuitec-path="/hdquan2/WebRoot/js/jquery-easyui-1.8.2/demo/dialog/complextoolbar.html">
+	<h2 data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-102" data-genuitec-path="/hdquan2/WebRoot/js/jquery-easyui-1.8.2/demo/dialog/complextoolbar.html">Complex Toolbar on Dialog</h2>
+	<p>This sample shows how to create complex toolbar on dialog.</p>
+	<div style="margin:20px 0;">
+		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#dlg').dialog('open')">Open</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#dlg').dialog('close')">Close</a>
+	</div>
+	<div id="dlg" class="easyui-dialog" title="Complex Toolbar on Dialog" style="width:400px;height:200px;padding:10px"
+			data-options="
+				iconCls: 'icon-save',
+				toolbar: '#dlg-toolbar',
+				buttons: '#dlg-buttons'
+			">
+		The dialog content.
+	</div>
+	<div id="dlg-toolbar" style="padding:2px 0">
+		<table cellpadding="0" cellspacing="0" style="width:100%">
+			<tr>
+				<td style="padding-left:2px">
+					<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:true">Edit</a>
+					<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-help',plain:true">Help</a>
+				</td>
+				<td style="text-align:right;padding-right:2px">
+					<input class="easyui-searchbox" data-options="prompt:'Please input somthing'" style="width:150px"></input>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="dlg-buttons">
+		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:alert('save')">Save</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:$('#dlg').dialog('close')">Close</a>
+	</div>
+
+</body>
+</html>

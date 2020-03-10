@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>json数据语法.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+//1.定义基本格式
+	var person={"name":"张三","age":"23","gender":"true"};
+	//alert(person);
+	//2.嵌套格式	{}->[]
+	var persons={
+	"persons":[
+	{
+	"name":"张三",
+	"age":"23",
+	"gender":true
+	},
+	{
+	"name":"李四",
+	"age":"24",
+	"gender":true
+	},
+	{
+	"name":"王五",
+	"age":"25",
+	"gender":false
+	}
+	]};
+	
+	alert(persons);
+	
+	var ps=[	{
+	"name":"张三",
+	"age":"23",
+	"gender":true
+	},
+	{
+	"name":"李四",
+	"age":"24",
+	"gender":true
+	},
+	{
+	"name":"王五",
+	"age":"25",
+	"gender":false
+	}]
+		alert(ps);
+</script>
+
+  </head>
+  
+  <body>
+    This is my HTML page. <br>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="GB2312"?>
+	<china>
+		<province name="吉林省">
+			<city>长春</city>
+			<city>吉林市</city>
+			<city>四pin</city>
+			<city>松原</city>
+		</province>
+		<province name="辽宁省">
+			<city>沈阳</city>
+			<city>大连</city>
+			<city>鞍山</city>
+			<city>铁林</city>
+		</province>
+		<province name="山东省">
+			<city>济南</city>
+			<city>青岛</city>
+			<city>威海</city>
+			<city>烟台</city>
+		</province>
+	</china>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdquan.mapper.LogMapper">
+	<!--  <select id="selByaccInaccOut" resultType="Log">
+	select * from log where 1=1
+	<if test="accIn!=null and accIn!=''">
+		and accIn=#{accIn}
+	</if>
+	<if test="accOut!=null and accOut!=''">
+		and accOut=#{accOut}
+	</if>
+	</select>
+	-->
+	
+	
+	<!-- 	<select id="selByaccInaccOut" resultType="Log">
+	select * from log
+	<where>
+	<if test="accIn!=null and accIn!=''">
+		and accIn=#{accIn}
+	</if>
+	<if test="accOut!=null and accOut!=''">
+		and accOut=#{accOut}
+	</if>
+	</where>
+	</select>
+	 -->
+	
+	<!--  <select id="selByaccInaccOut" resultType="Log">
+	select * from log
+	<where>
+		<choose>
+			<when test="accIn!=null and accIn!=''">
+				and accIn=#{accIn}
+			</when>
+			<when test="accOut!=null and accOut!=''">
+			and accOut=#{accOut}</when>
+		</choose>
+	</where>
+	</select>
+	 -->
+	<!-- 
+	<update id="upd" parameterType="Log">
+	update log
+	<set>
+			id=#{id},
+		<if test="accIn!=null and accIn!=''">
+		accIn=#{accIn},
+		</if>	
+		<if test="accOut!=null and accOut!=''">
+		accOut=#{accOut},
+		</if>
+	</set>
+	where id=#{id}
+	</update>
+	 -->
+	<!--  
+	<update id="upd" parameterType="Log">
+	update log
+	<trim prefix="set" suffixOverrides=",">
+			a=a,
+	</trim>
+	where id=100
+	</update>
+	-->
+<!--  
+	<select id="selByLog" parameterType="Log" resultType="Log">
+	select * from log
+	<trim prefix="where" prefixOverrides="and"> 
+	and accIn=#{accIn}
+	</trim>
+	</select>
+-->	
+
+<!-- 
+	<select id="selByLog" parameterType="Log" resultType="Log">
+	<bind name="money" value="'$'+money"/>
+	#{money}
+	</select>
+ -->
+ 
+ 
+	<select id="selByLog" parameterType="Log" resultType="Log">
+<if test="accIn!=null">
+	<bind name="accIn" value="'%'+accIn+'%'"/>
+	#{accIn}
+	</if>
+	<!--  <if test="accOut!=null">
+	<bind name="accOut" value="'%'+accOut+'%'"/>
+	#{accOut}
+	</if>
+	-->
+	</select>
+	
+	
+	<select id="selIn" parameterType="list" resultType="log">
+	select * from log where id in
+	<foreach collection="list" item="abc" open="(" close=")" separator=",">
+	#{abc}
+	</foreach>
+	</select>
+	
+	<insert id="ins" parameterType="list">
+	insert into log values
+	<trim suffixOverrides=",">
+	<foreach collection="list" item="log">
+	(default,${log},2,2),
+	</foreach>
+	</trim>
+	</insert>
+	
+	
+	<select id="">
+	select <include refid="mysql"></include> from log
+	</select>
+	<sql id="mysql">
+	id,accIn,accOut,money
+	</sql>
+</mapper>

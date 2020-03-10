@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Transform DataGrid from Table - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"63900",secure:"63905"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
+<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-79" data-genuitec-path="/hdquan3/WebRoot/js/jquery-easyui-1.8.2/demo/datagrid/transform.html">
+	<h2 data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-79" data-genuitec-path="/hdquan3/WebRoot/js/jquery-easyui-1.8.2/demo/datagrid/transform.html">Transform DataGrid from Table</h2>
+	<p>Transform DataGrid from an existing, unformatted html table.</p>
+	<div style="margin:20px 0;">
+		<a href="#" class="easyui-linkbutton" onclick="javascript:$('#dg').datagrid()">Transform</a>
+	</div>
+	<table id="dg" style="width:700px;height:auto;border:1px solid #ccc;">
+		<thead>
+			<tr>
+				<th data-options="field:'itemid'">Item ID</th>
+				<th data-options="field:'productid'">Product</th>
+				<th data-options="field:'listprice',align:'right'">List Price</th>
+				<th data-options="field:'attr1'">Attribute</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>EST-1</td><td>FI-SW-01</td><td>36.50</td><td>Large</td>
+			</tr>
+			<tr>
+				<td>EST-10</td><td>K9-DL-01</td><td>18.50</td><td>Spotted Adult Female</td>
+			</tr>
+			<tr>
+				<td>EST-11</td><td>RP-SN-01</td><td>28.50</td><td>Venomless</td>
+			</tr>
+			<tr>
+				<td>EST-12</td><td>RP-SN-01</td><td>26.50</td><td>Rattleless</td>
+			</tr>
+			<tr>
+				<td>EST-13</td><td>RP-LI-02</td><td>35.50</td><td>Green Adult</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

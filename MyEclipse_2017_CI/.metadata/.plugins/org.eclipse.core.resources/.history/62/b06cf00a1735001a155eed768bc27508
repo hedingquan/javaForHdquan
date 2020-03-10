@@ -1,0 +1,174 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+ 	<jsp:include page="BaseJsp.jsp" />
+	 <script type="text/javascript">
+	 $(function(){
+	 datagrid=$('#datagrid').datagrid({
+		url:'allWaterElectric.action',
+		iconCls:'icon-save',
+		pagination:true,
+		pageSize:30,
+		pageList:[ 10,20,30,40],
+		fit:true,
+		fitColums:false,
+		nowarp:false,
+		border:false,
+		idField:'id',
+		frozenColumns : [ [
+		  {field:'controller',
+            title:'修改',
+            width:50,
+            align : 'center',
+                formatter : function (value,row,index)
+	             {
+	              return '<a href="SearchDepartmentAndUsergroup('+index+');">修改</a>';
+	             }
+            },
+		{
+            field:'id',
+            title:'序号',
+            width:50,
+            align : 'center'
+            },
+            {
+            field:'Name',
+            title:'姓名',
+            width:50,
+            align : 'center'
+            },
+            {
+            field:'salaryNum',
+            title:'工资号',
+            width:50,
+            align : 'center'
+            }
+            ]],
+             columns:[[
+           {
+            field:'buildingName',
+            title:'楼名',
+            width:50,
+            align : 'center'
+            },
+            {
+            field:'uName',
+            title:'单元',
+            width:50,
+            align : 'center'
+            }, {
+            field:'Season',
+            title:'季度',
+            width:50,
+            align : 'center'
+            }, {
+            field:'lastelectricNum',
+            title:'电上次表低',
+            width:50,
+            align : 'center'
+            }, {
+            field:'electricNum',
+            title:'电本季读数',
+            width:50,
+            align : 'center'
+            },{
+            field:'Bill',
+            title:'电本季度数',
+            width:50,
+            align : 'center',
+            formatter: function(value,row,index){return row.electricNum-row.lastelectricNum;}
+            },{
+            field:'electricBill',
+            title:'电单价',
+            width:50,
+            align : 'center'
+            },{
+            field:'electricmoney',
+            title:'电金额',
+            width:50,
+            align : 'center',
+            formatter: function(value,row,index){return (row.electricNum-row.lastelectricNum)*row.electricBill;}
+            },{
+            field:'lastewaterNum',
+            title:'水上次表低',
+            width:50,
+            align : 'center'
+            }, {
+            field:'waterNum',
+            title:'水本季读数',
+            width:50,
+            align : 'center'
+            },{
+            field:'Bill1',
+            title:'水本季方数',
+            width:50,
+            align : 'center',
+            formatter: function(value,row,index){return row.waterNum-row.lastewaterNum;}
+            },{
+            field:'waterBill',
+            title:'水单价',
+            width:50,
+            align : 'center'
+            },{
+            field:'watermoney',
+            title:'水金额',
+            width:50,
+            align : 'center',
+            formatter: function(value,row,index){return (row.waterNum-row.lastewaterNum)*row.waterBill;}
+            },{
+            field:'addition',
+            title:'备注',
+            width:50,
+            align : 'center'
+            }
+            ]],
+            onLoadSuccess:function(data)
+            {
+	            $('#dd').combobox({
+			        url:'waterElectricYear.action',
+			        valueField:'id',
+			        textField:'addition'
+			    });
+            }
+	 	});
+	 	    
+	 });
+	 </script>
+  </head>
+  
+  <body>
+	   <div id="cc" class="easyui-layout" style="width:100%;height:100%;">
+	    <div data-options="region:'north'" style="width:110%;height:80px;">
+	        <input id="dd" style="align:center">
+			    <input class="easyui-combobox" data-options="
+				valueField: 'label',
+				textField: 'value',
+				data: [{
+					label: '第1季度',
+					value: '第1季度'
+				},{
+					label: '第2季度',
+					value: '第2季度'
+				},{
+					label: '第3季度',
+					value: '第3季度'
+				},{
+					label: '第4季度',
+					value: '第4季度'
+				}]" />
+	    </div>
+	   	 	<div data-options="region:'center'">
+					 <table id="datagrid"></table>
+	        </div>
+        </div>
+ 		</div>
+  </body>
+</html>

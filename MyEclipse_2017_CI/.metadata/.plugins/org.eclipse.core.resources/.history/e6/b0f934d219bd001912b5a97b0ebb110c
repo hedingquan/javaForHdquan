@@ -1,0 +1,161 @@
+package com.hdquan.controller;
+
+import java.io.UnsupportedEncodingException;
+import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.beanutils.BeanUtils;
+import org.apache.shiro.SecurityUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.hdquan.MD5.Json;
+import com.hdquan.MD5.WriteJson;
+import com.hdquan.pojo.Permission;
+import com.hdquan.pojo.Role;
+import com.hdquan.pojo.User;
+import com.hdquan.service.PermissionService;
+import com.hdquan.service.RoleService;
+import com.hdquan.service.UserService;
+
+@Controller
+public class RoleController {
+
+	@Autowired
+	private RoleService RoleService;
+	@Autowired
+	private UserService userService;
+	@Autowired
+	private PermissionService permissionService;
+	
+	@RequestMapping("insertRole.action")
+	public void insertRole(HttpServletRequest request,HttpServletResponse response,int[] permission) throws IllegalAccessException, InvocationTargetException
+	{
+		Json j=new Json();
+	 try {
+	    String principal = (String)SecurityUtils.getSubject().getPrincipal();
+		User user = userService.queryByNameAndPwd(principal);
+		Set<Role> roles = user.getRoles();
+		Role newrole=null;
+		for(int i=0;i<permission.length;i++)
+		{		
+			Role roles2 = permissionService.getRoles(String.valueOf(permission[i]));
+			if(roles2!=null)
+			{
+				newrole = roles2;
+			}else
+			{
+				newrole=new Role();
+			}
+			Permission permission2 = permissionService.getPermission(String.valueOf(permission[i]));
+			newrole.setPermission(permission2);
+			roles.add(newrole);
+		}
+		try {
+			User updateUser = userService.updateUser(user);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			 j.setSuccess(true);
+			 j.setMsg("添加角色成功！");
+		} catch (Exception e) {
+			 j.setMsg("添加角色失败");
+		}
+		 WriteJson.writeJson(j,response);
+	}
+	
+	@RequestMapping("deleteRole.action")
+	public void deleteRole(HttpServletRequest request,HttpServletResponse response,String ids)
+	{
+		Json j=new Json();
+		 try {
+			 RoleService.deleteRole(ids);
+			 j.setSuccess(true);
+			 j.setMsg("删除角色【"+ids+"】成功！");
+		} catch (Exception e) {
+			 j.setMsg("删除角色【"+ids+"】失败");
+		}
+		 WriteJson.writeJson(j,response);
+	}
+	
+	@RequestMapping("updateRole.action")
+	public void updateRole(HttpServletRequest request,HttpServletResponse response,int[] permission) throws UnsupportedEncodingException, IllegalAccessException, InvocationTargetException
+	{
+	request.setCharacterEncoding( "utf-8" );
+	 response.setCharacterEncoding("utf-8");
+	response.setHeader("Content-Type" , "text/html");
+	Json j=new Json();
+	 try {
+	    String principal = (String)SecurityUtils.getSubject().getPrincipal();
+		User user = userService.queryByNameAndPwd(principal);
+		Set<Role> roles = new HashSet<Role>();
+		Role newrole=null;
+		for(int i=0;i<permission.length;i++)
+		{		
+			Role roles2 = permissionService.getRoles(String.valueOf(permission[i]));
+			if(roles2!=null)
+			{
+				newrole = roles2;
+			}else
+			{
+				newrole=new Role();
+			}
+			Permission permission2 = permissionService.getPermission(String.valueOf(permission[i]));
+			newrole.setPermission(permission2);
+			roles.add(newrole);
+		}
+		user.setRoles(roles);
+		try {
+			User updateUser = userService.updateUser(user);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		 j.setSuccess(true);
+		 j.setMsg("修改角色权限成功！");
+	} catch (Exception e) {
+		 j.setMsg("修改角色权限失败");
+	}
+	 WriteJson.writeJson(j,response);
+	}
+	
+	@RequestMapping("role.action")
+	public void datagrid(HttpServletRequest request,HttpServletResponse response,int page,int rows,String sort,String order
+			,boolean allRole
+			) throws IllegalAccessException, InvocationTargetException, UnsupportedEncodingException
+	{	
+		 request.setCharacterEncoding( "utf-8" );
+		 response.setCharacterEncoding("utf-8");
+		    response.setHeader("Content-Type" , "text/html");
+
+		    String principal = (String)SecurityUtils.getSubject().getPrincipal();
+		    User k=new User();
+		      if(!allRole)
+		      {
+		    	    k.setUsercode(principal);
+		      }
+		List<Role> l=RoleService.getRoles(page,rows,sort,order,k);
+		List<Role> nl=new ArrayList<Role>();
+		for(Role u:l)
+		{
+			Role nu=new Role();
+			org.springframework.beans.BeanUtils.copyProperties(u, nu);
+			nl.add(nu);
+		}
+		Map<String,Object> m=new HashMap<String,Object>();
+		m.put("total",RoleService.getTotal());
+		m.put("rows",nl);
+		m.put("page",page);
+		WriteJson.writeJson(m,response);
+	}
+}

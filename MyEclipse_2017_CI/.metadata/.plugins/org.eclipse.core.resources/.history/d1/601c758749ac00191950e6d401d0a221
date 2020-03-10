@@ -1,0 +1,142 @@
+package com.hdquan.dao.impl;
+
+import java.util.List;
+import java.util.Set;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.hdquan.dao.DepartmentDao;
+import com.hdquan.pojo.Department;
+import com.hdquan.pojo.ExtendDepartment;
+import com.hdquan.pojo.Role;
+import com.hdquan.pojo.User;
+
+
+@Repository
+public class DepartmentDaoImpl implements DepartmentDao{
+
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	@Override
+	public boolean deleteById(int id) {
+		Session session = sessionFactory.getCurrentSession();
+//		判断该部门下是否存在子部门
+		String hql="from Department  department where department.parentDepart=?0";
+		Query query = session.createQuery(hql);
+		query.setParameter(0, id);
+		List<Department> list =query.list();
+		if(list!= null && list.size()>0){
+//			遍历集合
+			for (Department dept : list) {
+//				int number = dept.getNumber();
+//				deleteById(number);
+			}
+		}
+//		删除子部门
+		Department department = (Department)session.get(Department.class,id);
+		session.delete(department);
+		return true;
+	}
+
+	@Override
+	public Department insertDepartment(User user,int id) {
+		Session session = sessionFactory.getCurrentSession();
+		session.save(user);
+		return null;
+	}
+
+
+	@Override
+	public Department insertDepartment_updateRole(int RoleId, int id) {
+		Session session = sessionFactory.getCurrentSession();
+		String hql="select u.roles.roleId as roleId from User u where u.department=?0";
+		Query query = session.createQuery(hql);
+		query.setParameter(0, id);
+		int k=0;
+		List<Object[]> list=query.list();
+		if(list!= null && list.size()>0){
+//			遍历集合
+			for (Object[] objects:list) {
+			System.out.println(objects[0]);
+			}
+		}
+		return null;
+	}
+	
+	@Override
+	public Department updateDepartment(Department Department, int id) {
+
+		return null;
+	}
+
+	@Override
+	public Department findDepartmentByDepartmentnumber(int number) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	public Department insert(Role role)
+	{
+		Session session = sessionFactory.getCurrentSession();
+		session.save(role);
+		return null;
+	}
+	
+	//ExtendDepartment插入
+	public int insert(ExtendDepartment extendDepartment,int parentDepartment)
+	{
+		Session session = sessionFactory.getCurrentSession();
+		extendDepartment.setHeaderName("何");
+		extendDepartment.setParentDepartment(parentDepartment);
+		Role role2=new Role();
+		role2.setDepartment(extendDepartment);
+		session.save(role2);
+		System.out.println(role2.getNumber());
+		return role2.getNumber();
+	}
+	
+	public ExtendDepartment update(int parentDepartment)
+	{
+		Session session = sessionFactory.getCurrentSession();
+		ExtendDepartment extendDepartment = (ExtendDepartment)session.get(ExtendDepartment.class,parentDepartment);
+		System.out.println(extendDepartment==null);
+		//如果父部门是ExtendDepartment的
+		if(extendDepartment!=null)
+		{
+			extendDepartment.setLastDepartment(false);
+		session.update(extendDepartment);
+		return null;
+		}
+		//如果父部门是Department的
+		else{
+		Department department = (Department)session.get(Department.class,parentDepartment);
+		department.setLastDepartment(false);
+		session.update(department);
+		return null;
+		}
+	}
+	
+	public ExtendDepartment RoleUpdate(int parentDepartment,int role2Number)
+	{
+		Session session = sessionFactory.getCurrentSession();
+		String hql="select role.roleId as roleId,role.power as id from Role role where role.department.number1=?0";
+		Query Query = session.createQuery(hql);
+		Query.setParameter(0, parentDepartment);
+		List<Object[]> list=Query.list();
+		Role role = (Role)session.get(Role.class,role2Number);
+		for(int i=0;i<list.size();i++)
+		{
+			Object[] os=list.get(i);
+		role.setRoleId((int)os[0]);
+		role.setPermissions((Permission)os[1]);
+		  }
+		return null;
+	}
+}

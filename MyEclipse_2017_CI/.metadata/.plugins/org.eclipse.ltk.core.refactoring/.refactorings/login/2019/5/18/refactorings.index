@@ -1,0 +1,4 @@
+1556978090645	Rename resource 'LogMapper.xml'
+1556979026550	Extract local variable 'requiredWebApplicationContext'
+1556979364834	Extract local variable 'login'
+1556979458497	Rename resource 'index.jsp'

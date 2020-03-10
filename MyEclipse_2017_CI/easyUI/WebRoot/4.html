@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html;" charset="UTF-8">
+  	<script type="text/javascript" src="js/jquery-easyui-1.8.2/jquery.min.js" charset="uft-8"></script> 
+  	<script type="text/javascript" src="js/jquery-easyui-1.8.2/jquery.easyui.min.js" charset="uft-8"></script>
+     <script type="text/javascript" src="js/jquery-easyui-1.8.2/locale/easyui-lang-zh_CN.js" charset="uft-8"></script> 
+   <link rel="stylesheet" href="js/jquery-easyui-1.8.2/themes/gray/easyui.css" type="text/css">
+    <link rel="stylesheet" href="js/jquery-easyui-1.8.2/themes/icon.css" type="text/css"> 
+<script type="text/javascript" charset="utf-8">
+	var login;
+	var loginInputForm;
+	$(function(){
+	login=$('#login').dialog({
+	closable:false,
+	modal:true,
+	buttons:[{
+				text:'注册',
+				handler:function(){}
+			},{
+				text:'登录',
+				handler:function(){
+				console.info('我点击登录了')
+				loginInputForm.submit();
+				}
+			}]
+		});
+		
+		loginInputForm=$('#loginInputForm').form({
+		   	 url:'userController.do?login',
+		    success:function(response){
+		    
+		    console.info(response);
+		    response=eval("("+response+")");//转换成json对象
+		     console.info(response);
+		     
+		   //等效于转换成json： response=$.parseJSON(response);
+		     
+		     if(r&&r.success)
+						{
+						login.dialog('close');
+						$.message.show({
+								title:'提示',
+								msg:response.msg
+						});
+						}else{
+						$.messager.alert('标题',response.msg);
+							}
+		    }
+		    
+		  				  });
+		    
+			});
+</script>
+ </head>
+  <body>
+  
+	<div id="login" title="用户登录" style="width:400px;height:200px;"
+        data-options="iconCls:'icon-save',resizable:true,modal:true">
+  		<form id="loginInputForm" method="post">
+	  		<table>
+	  		<tr>
+		  		<th>用户名：</th>
+		  			<td><input name="name"/></td>
+	  		</tr>
+	  		<tr>
+		  		<th>密码：</th>
+		  		 	<td><input name="password" type="password"/></td>
+	  		</tr>
+	  		</table>
+  		</form>
+	</div>
+	
+  </body>
+</html>

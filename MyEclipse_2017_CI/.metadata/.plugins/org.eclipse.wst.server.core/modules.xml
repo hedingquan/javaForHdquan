@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<modules>
+  <module deployMode="EXPLODED" moduleId="org.eclipse.jst.jee.server:hdquan2" serverId="Tomcat v9.0 Server at localhost"/>
+  <module deployMode="EXPLODED" moduleId="org.eclipse.jst.jee.server:student" serverId="com.genuitec.embedded.tomcat.server.v85"/>
+  <module deployMode="EXPLODED" moduleId="org.eclipse.jst.jee.server:Hydropower_query_system" serverId="Tomcat v9.0 Server at localhost"/>
+</modules>

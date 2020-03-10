@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 	package="com.hdquan.pojo">
+<!-- union-subclass  person那张表的内容加到子类的表中去了 -->
+	<class name="Person" table="_person" lazy="true" abstract="true">
+		<id name="id">
+			<generator class="increment"/>
+		</id>
+		<property name="name"/>
+		
+		<union-subclass name="Student" table="student">
+			<property name="school"/>
+			<property name="studentNum"/>
+		</union-subclass>
+		<union-subclass name="Teacher">
+			<property name="salary"/>
+			<property name="teacherNum"/>
+		</union-subclass>
+	</class>
+	
+</hibernate-mapping>

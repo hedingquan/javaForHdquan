@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Custom Menu Item - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"63900",secure:"63905"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
+<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-140" data-genuitec-path="/hdquan2/WebRoot/js/jquery-easyui-1.8.2/demo/menu/customitem.html">
+	<h2 data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-140" data-genuitec-path="/hdquan2/WebRoot/js/jquery-easyui-1.8.2/demo/menu/customitem.html">Custom Menu Item</h2>
+	<p>Right click on page to display menu, move to the 'Open' item to display its custom sub content.</p>
+	<div style="margin:20px 0;"></div>
+	<div id="mm" style="width:120px;">
+		<div>New</div>
+		<div>
+			<span>Open</span>
+			<div class="menu-content" style="text-align:left;padding:10px">
+				<div style="font-weight:bold;font-size:14px;margin-bottom:10px">Select Your Language:</div>
+				<ul id="tt">
+					<li>Java</li>
+					<li>Basic</li>
+					<li>C++</li>
+					<li>Fortran</li>
+				</ul>
+			</div>
+		</div>
+		<div data-options="iconCls:'icon-save'">Save</div>
+		<div data-options="iconCls:'icon-print'">Print</div>
+		<div class="menu-sep"></div>
+		<div>Exit</div>
+	</div>
+	<script>
+		$(function(){
+			$('#mm').menu();
+			$('#tt').tree();
+			$(document).bind('contextmenu',function(e){
+				e.preventDefault();
+				$('#mm').menu('show', {
+					left: e.pageX,
+					top: e.pageY
+				});
+			});
+		});
+	</script>
+
+</body>
+</html>

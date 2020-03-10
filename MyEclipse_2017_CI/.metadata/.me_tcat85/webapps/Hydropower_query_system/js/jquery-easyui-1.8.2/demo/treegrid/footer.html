@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>TreeGrid with Footer - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"63900",secure:"63905"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
+<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-264" data-genuitec-path="/Hydropower_query_system/WebRoot/js/jquery-easyui-1.8.2/demo/treegrid/footer.html">
+	<h2 data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-264" data-genuitec-path="/Hydropower_query_system/WebRoot/js/jquery-easyui-1.8.2/demo/treegrid/footer.html">TreeGrid with Footer</h2>
+	<p>Show summary information on TreeGrid footer.</p>
+	<div style="margin:20px 0;"></div>
+	<table id="tg"></table>
+	<script type="text/javascript">
+		$(function(){
+			$('#tg').treegrid({
+				title:'TreeGrid with Footer',
+				iconCls:'icon-ok',
+				width:700,
+				height:250,
+				rownumbers: true,
+				animate:true,
+				collapsible:true,
+				fitColumns:true,
+				url:'treegrid_data2.json',
+				method: 'get',
+				idField:'id',
+				treeField:'name',
+				showFooter:true,
+				columns:[[
+	                {title:'Task Name',field:'name',width:180},
+					{field:'persons',title:'Persons',width:60,align:'right'},
+					{field:'begin',title:'Begin Date',width:80},
+					{field:'end',title:'End Date',width:80},
+					{field:'progress',title:'Progress',width:120,
+					    formatter:function(value){
+					    	if (value){
+						    	var s = '<div style="width:100%;border:1px solid #ccc">' +
+						    			'<div style="width:' + value + '%;background:#cc0000;color:#fff">' + value + '%' + '</div>'
+						    			'</div>';
+						    	return s;
+					    	} else {
+						    	return '';
+					    	}
+				    	}
+					}
+				]]
+			});
+		})
+	</script>
+</body>
+</html>

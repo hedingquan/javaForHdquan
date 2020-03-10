@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:context="http://www.springframework.org/schema/context"
+     xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd"
+        default-autowire="byName"
+        >
+         
+        <context:property-placeholder location="classpath:db.properties"></context:property-placeholder> 
+        	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${jdbc.driver}"></property>
+		<property name="url" value="${jdbc.url}"></property>
+		<property name="username" value="${jdbc.username}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+	</bean>
+	<bean id="factory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	
+	<!-- 	<property name="dataSource" ref="dataSource"></property> -->
+	
+	<property name="typeAliasesPackage" value="com.hdquan.pojo" ></property>
+	</bean>
+	<!-- 扫描器 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+	<property name="basePackage" value="com.hdquan.mapper"></property> 
+	
+	<!-- 这里的 sqlSessionFactory比较特殊，id不能为sqlSessionFactory-->
+	<!-- <property name="sqlSessionFactory" ref="factory"></property> -->
+	<property name="sqlSessionFactoryBeanName" value="factory"></property>
+	</bean>
+	
+        <!-- spring-jdbc.jar中 -->
+        <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">   
+        	<property name="dataSource" ref="dataSource"></property>
+          </bean>
+        <!-- 配置声明式事务 -->
+        <tx:advice id="txAdvice" transaction-manager="txManager">
+        <tx:attributes>
+        <!-- 只要方法以ins开头事务管理 -->
+        <tx:method name="ins*" propagation="REQUIRED" isolation="DEFAULT"/>
+         <tx:method name="del*" rollback-for="java.lang.Exception"/>
+          <tx:method name="upd*" no-rollback-for=""/>
+          <tx:method name="*" read-only="true"/>
+        <!-- 声明切点中哪些方法中有事务的控制 -->
+        <!-- 
+        <tx:method name="insert"/>
+        <tx:method name="insUsers"/>
+         -->
+         
+        </tx:attributes>
+        </tx:advice>
+  	<aop:config>
+  	<aop:pointcut expression="execution(* com.hdquan.service.impl.*.*(..))" id="mypoint"/><!-- 声明切点，切点范围设置大一些 -->
+  	<aop:advisor advice-ref="txAdvice" pointcut-ref="mypoint"/>
+  	</aop:config>
+ </beans>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;lib&apos;&#x0D;&#x0A;- Original project: &apos;Ajax&apos;&#x0D;&#x0A;- Destination element: &apos;lib&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     jackson-annotations-2.9.0.jar&#x0D;&#x0A;     jackson-core-2.9.9.jar&#x0D;&#x0A;     jackson-databind-2.9.9.jar" description="Copy files" element1="WebRoot/WEB-INF/lib/jackson-annotations-2.9.0.jar" element2="WebRoot/WEB-INF/lib/jackson-core-2.9.9.jar" element3="WebRoot/WEB-INF/lib/jackson-databind-2.9.9.jar" files="3" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1563884747569" target="/ajax01/WebRoot/WEB-INF/lib" units="0" version="1.0"/>
+</session>

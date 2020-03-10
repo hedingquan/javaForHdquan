@@ -1,0 +1,20 @@
+网上查了一些方法，有通过获取在表格点击的点的坐标来间接获取行。后来发现其实有现成的方法：
+? table.getSelectionIndex();?可以获取选中行的索引。比如要删除选中的行，
+可以用以下代码：table.remove(table.getSelectionIndex());
+ 当然，能获取用户点击的是哪一行，就能获取该行的信息了。具体代码如下：
+		 ?TableItem t =?table.getItem(table.getSelectionIndex()); ?//获取选中的行
+那么，可以通过以下代码实现删除选中的：（下例为一按钮事件）
+
+? ? ? ? ? ? ? ?public void widgetSelected(SelectionEvent e) {
+TableItem[] t = table.getItems();
+这里的循环如果正向的话会报错，数组越界，因为删除第一行后，第二行就变成了第一行，
+如果再删除第二行的话，因为已经不存在了，所以会报越界
+for(int i=t.length-1;i>-1;i--){
+if(!t[i].getChecked()){
+System.out.println("到了这里");
+continue;
+}
+table.remove(i);
+
+}
+}

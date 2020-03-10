@@ -1,0 +1,255 @@
+package com.hdquan.controller;
+
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.beanutils.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.hdquan.Util.WriteJson;
+import com.hdquan.pojo.Account;
+import com.hdquan.pojo.Building;
+import com.hdquan.pojo.Room;
+import com.hdquan.pojo.Unit;
+import com.hdquan.pojo.User;
+import com.hdquan.service.BuildingService;
+import com.hdquan.service.WaterElectricService;
+
+@Controller
+public class WaterElectricityMaintenanceController extends NoPermissionException{
+	@Autowired
+	private WaterElectricService waterElectricService;
+	@Autowired
+	private BuildingService buildingServiceService;
+	
+	@RequestMapping("allWaterElectric.action")
+	public void allTeacherWaterElectric(HttpServletRequest request,HttpServletResponse response,
+			String year,String season, String name1, String id1, String salaryNum, String building,
+			String unit) throws IOException
+	{
+		 request.setCharacterEncoding( "utf-8" );
+		 response.setCharacterEncoding("utf-8");
+		    response.setHeader("Content-Type" , "text/html");
+		    if(year!=null||season!=null||name1!=null||id1!=null||salaryNum!=null||building!=null||unit!=null)
+		    {
+		    	   Map<String,Object> m=new HashMap<String,Object>();
+				    List<Account> limitSearchAccount = waterElectricService.limitSearchAccount(year, season, name1, id1, salaryNum, building, unit);
+					m.put("total",limitSearchAccount.size());
+					m.put("rows",limitSearchAccount);
+					WriteJson.writeJson(m,response);
+		    }else{
+			    List<Account> teacherAccount = waterElectricService.TeacherAccount();
+			    Map<String,Object> m=new HashMap<String,Object>();
+				m.put("total",teacherAccount.size());
+				m.put("rows",teacherAccount);
+				WriteJson.writeJson(m,response);
+			}
+	}
+	
+	@RequestMapping("allOtherWaterElectric.action")
+	public void allOtherWaterElectric(HttpServletRequest request,HttpServletResponse response,
+			String year,String month, String name1, String id1, String buildingName, String roomNum) throws IOException
+	{
+		 request.setCharacterEncoding( "utf-8" );
+		 response.setCharacterEncoding("utf-8");
+		    response.setHeader("Content-Type" , "text/html");
+		    Map<String,Object> m=new HashMap<String,Object>();
+		    List<Account> otherlimitSearchAccount = new ArrayList<Account>();
+		    if(year!=null||month!=null||name1!=null||buildingName!=null||roomNum!=null)
+		    {
+		    	if(!year.equals("")||!month.equals("")||!name1.equals("")||!buildingName.equals("")||!roomNum.equals(""))
+		    	{
+			    	    otherlimitSearchAccount = waterElectricService.OtherlimitSearchAccount(year, month, name1, buildingName, roomNum);
+			    	  
+		    	}else{
+				     otherlimitSearchAccount = waterElectricService.OtherAccount();
+		    	}
+		    	 	
+		    }else{
+			     otherlimitSearchAccount = waterElectricService.OtherAccount();
+			}
+		    m.put("total",otherlimitSearchAccount.size());
+			m.put("rows",otherlimitSearchAccount);
+			WriteJson.writeJson(m,response);
+	}
+
+	@RequestMapping("waterElectricYear.action")
+	public void waterElectricYear(HttpServletRequest request,HttpServletResponse response,String id	) throws IOException
+	{	
+		 request.setCharacterEncoding( "utf-8" );
+		 response.setCharacterEncoding("utf-8");
+		    response.setHeader("Content-Type" , "text/html");
+		    List<Account> Accounts = new ArrayList<Account>();
+		   if(id==null)
+		   {
+			   Accounts = waterElectricService.TeacherAccount();
+		   }else{
+			   Accounts = waterElectricService.OtherAccount();
+		   }
+					List<Account> WaterElectricYear=new ArrayList<Account>();
+					for(Account account:Accounts)
+					{
+						Account newAccount=new Account();
+						String[] split = account.getSeason().split("-");
+						newAccount.setSeason(split[0]);
+						newAccount.setId(account.getId());
+						WaterElectricYear.add(newAccount);
+					}
+					for(int i=0;i<WaterElectricYear.size()-1;i++)
+						for(int j=0;j<WaterElectricYear.size()-i-1;j++)
+						{
+							if(WaterElectricYear.get(j).equals(WaterElectricYear.get(i+1)))
+							{
+								WaterElectricYear.remove(WaterElectricYear.get(j));
+							}
+						}
+					WriteJson.writeJson(WaterElectricYear,response);
+		    	}
+	
+	@RequestMapping("buildingName.action")
+	public void buildingName(HttpServletRequest request,HttpServletResponse response,String id) throws IOException
+	{	
+		 request.setCharacterEncoding( "utf-8" );
+		 response.setCharacterEncoding("utf-8");
+		    response.setHeader("Content-Type" , "text/html");
+		    List<Account> Accounts = new ArrayList<Account>();
+			   if(id==null)
+			   {
+				   Accounts = waterElectricService.TeacherAccount();
+			   }else{
+				   Accounts = waterElectricService.OtherAccount();
+			   }
+					List<Building> WaterElectricYear=new ArrayList<Building>();
+					for(Account account:Accounts)
+					{
+						Building building=new Building();
+						if(account.getRoom()!=null&&account.getRoom().getBuilding()!=null)
+						org.springframework.beans.BeanUtils.copyProperties(account.getRoom().getBuilding(), building);
+						WaterElectricYear.add(building);
+					}
+					for(int i=0;i<WaterElectricYear.size()-1;i++)
+						for(int j=0;j<WaterElectricYear.size()-i-1;j++)
+						{
+							if(WaterElectricYear.get(j).equals(WaterElectricYear.get(i+1)))
+							{
+								WaterElectricYear.remove(WaterElectricYear.get(j));
+							}
+						}
+					WriteJson.writeJson(WaterElectricYear,response);
+		    	}
+	@RequestMapping("Unit.action")
+	public void Unit(HttpServletRequest request,HttpServletResponse response,String id) throws IOException
+	{	
+		 request.setCharacterEncoding( "utf-8" );
+		 response.setCharacterEncoding("utf-8");
+		    response.setHeader("Content-Type" , "text/html");
+		    List<Account> Accounts = new ArrayList<Account>();
+			   if(id==null)
+			   {
+				   Accounts = waterElectricService.TeacherAccount();
+			   }else{
+				   Accounts = waterElectricService.OtherAccount();
+			   }
+					List<Unit> WaterElectricYear=new ArrayList<Unit>();
+					for(Account account:Accounts)
+					{
+						Unit unit=new Unit();
+						if(account.getUnit()!=null)
+						org.springframework.beans.BeanUtils.copyProperties(account.getUnit(), unit);
+						WaterElectricYear.add(unit);
+					}
+					for(int i=0;i<WaterElectricYear.size()-1;i++)
+						for(int j=0;j<WaterElectricYear.size()-i-1;j++)
+						{
+							if(WaterElectricYear.get(j).equals(WaterElectricYear.get(i+1)))
+							{
+								WaterElectricYear.remove(WaterElectricYear.get(j));
+							}
+						}
+					WriteJson.writeJson(WaterElectricYear,response);
+		    	}
+	
+	@RequestMapping("AddWaterElectricInfo.action")
+	public void AddWaterElectricInfo(HttpServletRequest request,HttpServletResponse response,
+			String id1,String roomNum,String Season2,String Season5,String uName,String name1,String buildingName
+			) throws IOException, IllegalAccessException, InvocationTargetException
+	{	
+		 request.setCharacterEncoding( "utf-8" );
+		 response.setCharacterEncoding("utf-8");
+		    response.setHeader("Content-Type" , "text/html");
+		    
+		    if(!"".equals(id1.trim()))
+		    {
+		    	Account account = waterElectricService.getAccount(Integer.parseInt(id1));
+		    	BeanUtils.populate(account, request.getParameterMap());
+		    	account.setSeason(Season2+Season5);
+				account.setName(name1);
+				Room room = account.getRoom();
+				room.setRoomNum(roomNum);
+				Building building = room.getBuilding();
+				building.setBuildingName(buildingName);
+				room.setBuilding(building);
+				account.setRoom(room);
+				Unit unit = account.getUnit();
+				unit.setuName(uName);
+				account.setUnit(unit);
+				waterElectricService.updateAccount(account);
+		    }else{
+				    Account account = new Account();
+					BeanUtils.populate(account, request.getParameterMap());
+					account.setSeason(Season2);
+					account.setName(name1);
+					Unit unit = buildingServiceService.getUnit(uName);
+					if(unit==null)
+					{
+						 unit=new Unit();
+						unit.setuName(uName);
+					}else{
+						unit.setuName(uName);
+					}
+					account.setUnit(unit);
+					Room room = buildingServiceService.getRoom(roomNum);
+					if(room==null)
+					{
+						room=new Room();
+						room.setRoomNum(roomNum);
+					}else{
+						room.setRoomNum(roomNum);
+					}
+					
+					Building building = buildingServiceService.getBuilding(buildingName);
+					if(building==null)
+					{
+						building=new Building();
+						building.setBuildingName(buildingName);
+						room.setBuilding(building);
+					}else{
+						building.setBuildingName(buildingName);
+						room.setBuilding(building);
+					}
+					account.setRoom(room);
+					waterElectricService.addAccount(account);
+		    	}
+		    	}
+	
+	@RequestMapping("deleteAccount.action")
+	public void deleteAccount(HttpServletRequest request,HttpServletResponse response,String id) throws IOException, IllegalAccessException, InvocationTargetException
+	{	
+		 request.setCharacterEncoding( "utf-8" );
+		 response.setCharacterEncoding("utf-8");
+		  response.setHeader("Content-Type" , "text/html");
+		  Account account = waterElectricService.getAccount(Integer.parseInt(id));
+		  account.setRoom(null);
+		  account.setUnit(null);
+		  waterElectricService.deleteAccount(account);
+	}
+ }

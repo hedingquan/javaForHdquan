@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 	package="com.hdquan.pojo">
+<!-- 映射哪个包的内容 -->
+
+	<class name="User" table="_user">
+		
+		<id name="id">
+			<generator class="native"/>
+		</id>
+
+		<property name="uname" type="java.lang.String"
+				not-null="true"
+				length="15"
+				column="username"/>
+				<!--  数据库名column和类的名字uname不一致时，需要指明-->
+		<property name="birthday" type="java.sql.Date"></property>
+	</class>
+	
+</hibernate-mapping>

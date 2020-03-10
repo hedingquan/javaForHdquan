@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Menu Events - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"63900",secure:"63905"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
+<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-143" data-genuitec-path="/hdquan3/WebRoot/js/jquery-easyui-1.8.2/demo/menu/events.html">
+	<h2 data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-143" data-genuitec-path="/hdquan3/WebRoot/js/jquery-easyui-1.8.2/demo/menu/events.html">Menu Events</h2>
+	<p>Right click on page to display menu and click an item.</p>
+	<div style="margin:20px 0;"></div>
+	<div id="mm" class="easyui-menu" data-options="onClick:menuHandler" style="width:120px;">
+		<div data-options="name:'new'">New</div>
+		<div data-options="name:'save',iconCls:'icon-save'">Save</div>
+		<div data-options="name:'print',iconCls:'icon-print'">Print</div>
+		<div class="menu-sep"></div>
+		<div data-options="name:'exit'">Exit</div>
+	</div>
+	<div id="log" class="easyui-panel" title="Event Log" style="height:250px;padding:10px">
+	</div>
+	<script>
+		function menuHandler(item){
+			$('#log').prepend('<p>Click Item: '+item.name+'</p>');
+		}
+		$(function(){
+			$(document).bind('contextmenu',function(e){
+				e.preventDefault();
+				$('#mm').menu('show', {
+					left: e.pageX,
+					top: e.pageY
+				});
+			});
+		});
+	</script>
+</body>
+</html>

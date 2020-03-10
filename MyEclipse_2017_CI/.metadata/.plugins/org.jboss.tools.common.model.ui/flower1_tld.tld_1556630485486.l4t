@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Layout resource="/flower1/WebRoot/WEB-INF/tld.tld">
+ <TreeFormPage>
+  <Memento type="FileTLD_1_2">
+   <Memento type="Tag Library Description"/>
+   <Memento type="Defined Tags"/>
+  </Memento>
+ </TreeFormPage>
+</Layout>

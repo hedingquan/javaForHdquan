@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Validate On Blur - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"63900",secure:"63905"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
+<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-270" data-genuitec-path="/hdquan2/WebRoot/js/jquery-easyui-1.8.2/demo/validatebox/validateonblur.html">
+	<h2 data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-270" data-genuitec-path="/hdquan2/WebRoot/js/jquery-easyui-1.8.2/demo/validatebox/validateonblur.html">Validate On Blur</h2>
+	<p>Active validation on first blur event.</p>
+	<div style="margin:20px 0;"></div>
+	<div class="easyui-panel" title="Register" style="width:100%;max-width:400px;padding:30px 60px;">
+		<div style="margin-bottom:20px">
+			<label for="username" class="label-top">User Name:</label>
+			<input id="username" class="easyui-validatebox tb" data-options="required:true,validType:'length[3,10]',validateOnCreate:false,validateOnBlur:true">
+		</div>
+		<div style="margin-bottom:20px">
+			<label for="email" class="label-top">Email:</label>
+			<input id="email" class="easyui-validatebox tb" data-options="required:true,validType:'email',validateOnCreate:false,validateOnBlur:true">
+		</div>
+		<div style="margin-bottom:20px">
+			<label for="url" class="label-top">Url:</label>
+			<input id="url" class="easyui-validatebox tb" data-options="required:true,validType:'url',validateOnCreate:false,validateOnBlur:true">
+		</div>
+		<div style="margin-bottom:20px">
+			<label for="phone" class="label-top">Phone:</label>
+			<input id="phone" class="easyui-validatebox tb" data-options="required:true,validateOnCreate:false,validateOnBlur:true">
+		</div>
+	</div>
+	<style scoped="scoped">
+		.tb{
+			width:100%;
+			margin:0;
+			padding:5px 4px;
+			border:1px solid #ccc;
+			box-sizing:border-box;
+		}
+	</style>
+
+</body>
+</html>

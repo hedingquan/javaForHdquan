@@ -1,0 +1,24 @@
+1556118241771	Delete element
+1556198784874	Rename resource 'AccountMapper.xml'
+1556199824655	Copy file
+1556200933405	Extract local variable 'session'
+1556200953547	Extract local variable 'mapper'
+1556201143912	Extract local variable 'List'
+1556201260107	Extract local variable 'count'
+1556201519478	Extract local variable 'mapper'
+1556201741169	Delete element
+1556201954254	Extract local variable 'sname'
+1556201998050	Extract local variable 'tname'
+1556202006721	Extract local variable 'pageSize'
+1556202015247	Extract local variable 'pageNumber'
+1556202040485	Extract local variable 'pi'
+1556202316364	Delete element
+1556202332172	Delete element
+1556341736709	Rename type 'OpenSessionInView'
+1556342908701	Delete element
+1556345264266	Copy packages
+1556345270756	Copy file
+1556345276940	Copy folder
+1556345302475	Copy files
+1556345310492	Copy file
+1556345318904	Copy file

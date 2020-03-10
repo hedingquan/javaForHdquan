@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:aop="http://www.springframework.org/schema/aop"
+      xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+         http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+        http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context.xsd
+         " 
+        default-autowire="byName">
+        <context:property-placeholder location="classpath:db.properties,classpath:second.properties"></context:property-placeholder> 
+        <context:component-scan base-package="com.hdquan.service.impl"></context:component-scan><!-- 扫描所指的包 --> 
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${jdbc.driver}"></property>
+		<property name="url" value="${jdbc.url}"></property>
+		<property name="username" value="${jdbc.username}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+	</bean>
+	<bean id="factory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	
+	<!-- 	<property name="dataSource" ref="dataSource"></property> -->
+	
+	<property name="typeAliasesPackage" value="com.hdquan.pojo" ></property>
+	</bean>
+	<!-- 扫描器，创建出usersMapper -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+	<property name="basePackage" value="com.hdquan.mapper"></property> 
+	
+	<!-- 这里的 sqlSessionFactory比较特殊，id不能为sqlSessionFactory-->
+	<!-- <property name="sqlSessionFactory" ref="factory"></property> -->
+	<property name="sqlSessionFactoryBeanName" value="factory"></property>
+	</bean>
+	 
+	
+	<bean id="UsersService" class="com.hdquan.service.impl.UsersServiceImpl">
+	<!--  <property name="usersmapper" ref="usersMapper"></property>  必须要有get和set的方法在Service层 
+			ref="usersMapper"指的是com.hdquan.mapper.UsersMapper，name="usersmapper"指的是UsersServiceimpl的private UsersMapper usersmapper;
+	-->
+	</bean>
+	
+	<aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>    
+	<bean id="mybefore" class="com.hdquan.advice.MyBefore"></bean>
+	<bean id="myafter" class="com.hdquan.advice.MyAfter"></bean>
+	<aop:config>
+	<aop:pointcut expression="execution(* com.hdquan.service.impl.UsersServiceImpl.login(..))" id="mypoint"/>
+	<aop:advisor advice-ref="mybefore" pointcut-ref="mypoint"/>
+	<aop:advisor advice-ref="myafter" pointcut-ref="mypoint"/>
+	</aop:config>
+ </beans>

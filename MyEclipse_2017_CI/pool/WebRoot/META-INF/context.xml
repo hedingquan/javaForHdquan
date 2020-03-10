@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<Resource 
+		driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+		url="jdbc:sqlserver://localhost:1433;DatabaseName=gy1"
+		username="root"
+		password="hedingquan123"
+		maxActive="50"
+		maxIdle="20"
+		name="test"
+		auth="Container"
+		maxWait="10000"
+		type="javax.sql.DataSource"
+	/>
+</Context>

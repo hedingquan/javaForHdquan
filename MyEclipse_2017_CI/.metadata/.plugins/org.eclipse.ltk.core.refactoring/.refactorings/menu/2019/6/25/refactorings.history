@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;menu/src/com/hdquan/mapper/LogMapper.xml&apos; to &apos;MenuMapper.xml&apos;" description="Rename resource &apos;LogMapper.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/com/hdquan/mapper/LogMapper.xml" name="MenuMapper.xml" stamp="1560860415652" updateReferences="true"/>
+</session>

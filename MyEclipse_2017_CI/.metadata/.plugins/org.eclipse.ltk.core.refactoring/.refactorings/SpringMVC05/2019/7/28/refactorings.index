@@ -1,0 +1,4 @@
+1562588699033	Extract local variable 'originalFilename'
+1562588975013	Extract local variable 'suffix'
+1562589064313	Extract local variable 'string'
+1562593465441	Copy files

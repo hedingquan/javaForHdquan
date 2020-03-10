@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>TreeGrid Lines - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"63900",secure:"63905"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
+<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-265" data-genuitec-path="/Hydropower_query_system/WebRoot/js/jquery-easyui-1.8.2/demo/treegrid/lines.html">
+	<h2 data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-265" data-genuitec-path="/Hydropower_query_system/WebRoot/js/jquery-easyui-1.8.2/demo/treegrid/lines.html">TreeGrid Lines</h2>
+	<p>This example shows how to show treegrid lines.</p>
+	<div style="margin:20px 0;"></div>
+	<table title="TreeGrid Lines" class="easyui-treegrid" style="width:700px;height:250px"
+			data-options="
+				url: 'treegrid_data1.json',
+				method: 'get',
+				lines: true,
+				rownumbers: true,
+				idField: 'id',
+				treeField: 'name'
+			">
+		<thead>
+			<tr>
+				<th data-options="field:'name'" width="220">Name</th>
+				<th data-options="field:'size'" width="100" align="right">Size</th>
+				<th data-options="field:'date'" width="150">Modified Date</th>
+			</tr>
+		</thead>
+	</table>
+
+</body>
+</html>

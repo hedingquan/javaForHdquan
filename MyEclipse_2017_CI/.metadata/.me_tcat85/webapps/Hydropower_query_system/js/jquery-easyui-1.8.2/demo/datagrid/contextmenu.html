@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Context Menu on DataGrid - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"63900",secure:"63905"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
+<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-63" data-genuitec-path="/Hydropower_query_system/WebRoot/js/jquery-easyui-1.8.2/demo/datagrid/contextmenu.html">
+	<h2 data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-63" data-genuitec-path="/Hydropower_query_system/WebRoot/js/jquery-easyui-1.8.2/demo/datagrid/contextmenu.html">Context Menu on DataGrid</h2>
+	<p>Right click on the header of DataGrid to display context menu.</p>
+	<div style="margin:20px 0;"></div>
+	<table id="dg"></table>
+	<script type="text/javascript">
+		(function($){
+			function buildMenu(target){
+				var state = $(target).data('datagrid');
+				if (!state.columnMenu){
+					state.columnMenu = $('<div></div>').appendTo('body');
+					state.columnMenu.menu({
+						onClick: function(item){
+							if (item.iconCls == 'tree-checkbox1'){
+								$(target).datagrid('hideColumn', item.name);
+								$(this).menu('setIcon', {
+									target: item.target,
+									iconCls: 'tree-checkbox0'
+								});
+							} else {
+								$(target).datagrid('showColumn', item.name);
+								$(this).menu('setIcon', {
+									target: item.target,
+									iconCls: 'tree-checkbox1'
+								});
+							}
+						}
+					})
+					var fields = $(target).datagrid('getColumnFields',true).concat($(target).datagrid('getColumnFields',false));
+					for(var i=0; i<fields.length; i++){
+						var field = fields[i];
+						var col = $(target).datagrid('getColumnOption', field);
+						state.columnMenu.menu('appendItem', {
+							text: col.title,
+							name: field,
+							iconCls: 'tree-checkbox1'
+						});
+					}
+				}
+				return state.columnMenu;
+			}
+			$.extend($.fn.datagrid.methods, {
+				columnMenu: function(jq){
+					return buildMenu(jq[0]);
+				}
+			});
+		})(jQuery);
+
+		$(function(){
+			$('#dg').datagrid({
+				url: 'datagrid_data1.json',
+				method: 'get',
+				title: 'Context Menu on DataGrid',
+				iconCls: 'icon-save',
+				width: 700,
+				height: 250,
+				fitColumns: true,
+				singleSelect: true,
+				columns:[[
+					{field:'itemid',title:'Item ID',width:80},
+					{field:'productid',title:'Product ID',width:120},
+					{field:'listprice',title:'List Price',width:80,align:'right'},
+					{field:'unitcost',title:'Unit Cost',width:80,align:'right'},
+					{field:'attr1',title:'Attribute',width:250},
+					{field:'status',title:'Status',width:60,align:'center'}
+				]],
+				onHeaderContextMenu: function(e, field){
+					e.preventDefault();
+					$(this).datagrid('columnMenu').menu('show', {
+						left:e.pageX,
+						top:e.pageY
+					});
+				}
+			});
+		});
+	</script>
+</body>
+</html>

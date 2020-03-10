@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html;" charset="UTF-8">
+  	<script type="text/javascript" src="js/jquery-easyui-1.8.2/jquery.min.js" charset="uft-8"></script> 
+  	<script type="text/javascript" src="js/jquery-easyui-1.8.2/jquery.easyui.min.js" charset="uft-8"></script>
+     <script type="text/javascript" src="js/jquery-easyui-1.8.2/locale/easyui-lang-zh_CN.js" charset="uft-8"></script> 
+   <link rel="stylesheet" href="js/jquery-easyui-1.8.2/themes/gray/easyui.css" type="text/css" charset="uft-8">
+    <link rel="stylesheet" href="js/jquery-easyui-1.8.2/themes/icon.css" type="text/css" charset="uft-8"> 
+<script type="text/javascript" charset="utf-8">
+		
+		var cc;
+		$(function(){
+		cc=$('#cc').layout();
+		cc.layout('collapse','west');
+		});
+		function getCenterPanel()
+		{
+		var CenterPanel=$('#cc').layout('panel','center');
+		//console.info(CenterPanel);
+		console.info(CenterPanel.panel('options').title);
+		}
+</script>
+ </head>
+  <body>
+      <div id="cc" class="easyui-layout" style="width:1000px;height:600px;">
+        <div data-options="region:'north',title:'North Title',split:true" style="height:100px;"></div>
+        <div data-options="region:'south',title:'South Title',split:true" style="height:100px;"></div>
+        <div data-options="region:'east',title:'East',split:true" style="width:100px;"></div>
+        <div data-options="region:'west',title:'West',split:true" style="width:100px;"></div>
+        <div data-options="region:'center',title:'center title'" href="center.html" style="padding:5px;background:#eee;overflow:hidden;">
+        	<input type="button" value="获取面板" onclick="getCenterPanel();">
+        </div>
+    </div>
+  </body>
+</html>

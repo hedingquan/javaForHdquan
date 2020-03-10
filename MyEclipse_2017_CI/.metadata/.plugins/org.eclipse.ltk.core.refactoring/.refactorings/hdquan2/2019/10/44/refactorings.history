@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;shiro-ehcache.xml&apos; to &apos;hdquan3/src&apos;&#x0D;&#x0A;- Original project: &apos;hdquan2&apos;&#x0D;&#x0A;- Destination element: &apos;hdquan3/src&apos;&#x0D;&#x0A;- Original element: &apos;shiro-ehcache.xml&apos;" description="Copy file" destination="=hdquan3/src" element1="src/shiro-ehcache.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1572229616881" units="0" version="1.0"/>
+</session>

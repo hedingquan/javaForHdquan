@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+        <!--  
+       	<bean id="mybefore" class="com.hdquan.advice.MyBeforeAdvice"></bean>
+       	<bean id="myafter" class="com.hdquan.advice.MyAfterAdvice"></bean>
+		<aop:config>
+		<aop:pointcut expression="execution(* com.hdquan.test.*.*(..))" id="mypoint"/>
+		<aop:advisor advice-ref="mybefore" pointcut-ref="mypoint"/>
+		<aop:advisor advice-ref="myafter" pointcut-ref="mypoint"/>
+		</aop:config>
+		
+		
+		<bean id="demo1" class="com.hdquan.test.Demo1"></bean>
+		-->
+		<bean id="demo" class="com.hdquan.test.Demo"></bean>
+		<bean id="mythrow" class="com.hdquan.advice.MyThrowAdvice"></bean>
+		<aop:config>
+			<aop:aspect ref="mythrow">
+				<aop:pointcut expression="execution(* com.hdquan.test.Demo.demo1())" id="mypoint"/>
+				<aop:after-throwing method="myexception" pointcut-ref="mypoint" throwing="e1"/>
+			</aop:aspect>
+		</aop:config>
+ </beans>

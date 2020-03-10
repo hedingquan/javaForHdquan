@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 	package="com.hdquan.pojo">
+<!-- 映射哪个包的内容 -->
+
+	<class name="User2" table="_user2" lazy="true">
+		
+		<id name="id">
+			<generator class="native"/>
+		</id>
+			<property name="name"/>
+			<property name="password"/>
+			<property name="image" type="java.sql.Blob"/>
+			<property name="resume" type="java.sql.Clob"/>
+	</class>
+</hibernate-mapping>

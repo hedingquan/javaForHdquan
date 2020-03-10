@@ -1,0 +1,30 @@
+1563448699184	Rename type 'DemoController'
+1563451602593	Rename type 'ActiveUser'
+1563451877477	Rename type 'activeUser'
+1563512037497	Extract local variable 'createSQLQuery'
+1563514851223	Extract local variable 'insertUser'
+1563515500831	Extract local variable 'beginTransaction'
+1563518045705	Copy compilation unit
+1563519637034	Extract local variable 'user'
+1563522900337	Extract local variable 'findUserByName'
+1563523631168	Extract local variable 'createQuery'
+1563523757597	Extract local variable 'list'
+1563524874444	Extract local variable 'createQuery'
+1563524940823	Extract local variable 'createSQLQuery'
+1563529055123	Extract local variable 'list'
+1563532254196	Extract local variable 'list'
+1563533241683	Extract local variable 'list'
+1563534685820	Extract local variable 'setResultTransformer'
+1563535160823	Delete element
+1563535354445	Delete element
+1563539366541	Extract local variable 'object'
+1563543128522	Extract local variable 'currentSession'
+1563543556630	Extract local variable 'setParameter'
+1563543667230	Extract local variable 'list'
+1563544754568	Extract local variable 'currentSession'
+1563544843735	Extract local variable 'createQuery'
+1563591432736	Copy compilation unit
+1563591461406	Copy compilation unit
+1563591742449	Copy compilation unit
+1563594324991	Extract local variable 'number'
+1563595092803	Extract local variable 'currentSession'

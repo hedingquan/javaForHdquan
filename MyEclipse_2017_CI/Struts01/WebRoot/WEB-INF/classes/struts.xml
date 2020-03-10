@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+   <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<package name="hellodemo" extends="struts-default" namespace="/">
+	   	<!-- 全局结果页面配置 -->
+	<global-results>
+		<result name="success">/hello.jsp</result>
+	</global-results>
+	<!-- name:访问名称： -->
+		<action name="hello" class="com.hdquan.action.HelloAction">
+		<!-- 配置方法的返回值到页面 -->
+			<result name="ok" type="redirectAction">orders</result>
+		</action>
+			<action name="orders" class="com.hdquan.action.HelloAction">
+			<result name="ok">/hello.jsp</result>
+		</action>
+	</package>
+	<!-- <package name="methoddemo" extends="struts-default" namespace="/">
+		<action name="addAction" class="com.hdquan.action.BookAction" method="add">
+		</action>
+	</package> -->
+	<package name="methoddemo" extends="struts-default" namespace="/">
+				<!-- 声明拦截器 -->
+		      <interceptors>
+		        <interceptor name="logininterceptor" class="com.hdquan.Interceptor.LoginInterceptor"/>
+		      </interceptors>
+	
+		<action name="book_*" class="com.hdquan.action.BookAction" method="{1}">
+		<!-- 使用自定义拦截器 -->
+		   <interceptor-ref name="logininterceptor">
+		   <!-- 配置action里面某些方法不进行拦截
+		   	name属性：excludeMethods
+		   	值：action不拦截的方法名称
+		    -->
+		   	<param name="excludeMethods">login,add</param>
+		   </interceptor-ref>
+		   <!-- 默认拦截器手动一次 -->
+		    <interceptor-ref name="defaultStack"/>
+		</action>
+	</package>
+</struts>

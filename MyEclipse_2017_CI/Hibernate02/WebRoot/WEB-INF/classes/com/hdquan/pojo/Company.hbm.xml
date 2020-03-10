@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 	package="com.hdquan.pojo">
+<!-- 映射哪个包的内容 -->
+
+	<class name="Company" table="_company" lazy="true">
+		<id name="id">
+			<generator class="native"/>
+		</id>
+		<property name="name"/>
+		<!-- unique="true"表示唯一外键关联 -->
+			<many-to-one name="address" class="Address" cascade="all" unique="true">
+				<column name="addressId"></column><!-- 外键 -->
+			</many-to-one>
+			</class>
+	
+</hibernate-mapping>

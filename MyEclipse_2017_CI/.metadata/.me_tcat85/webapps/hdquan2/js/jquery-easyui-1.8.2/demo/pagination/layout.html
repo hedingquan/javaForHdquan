@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Pagination Layout - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"63900",secure:"63905"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
+<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-164" data-genuitec-path="/hdquan2/WebRoot/js/jquery-easyui-1.8.2/demo/pagination/layout.html">
+	<h2 data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-164" data-genuitec-path="/hdquan2/WebRoot/js/jquery-easyui-1.8.2/demo/pagination/layout.html">Pagination Layout</h2>
+	<p>The pagination layout supports various types of pages which you can choose.</p>
+	<div style="margin:20px 0;"></div>
+	<div class="easyui-panel">
+		<div id="pp" class="easyui-pagination" data-options="
+					total:114,
+					layout:['first','prev','next','last','info']
+				"></div>
+	</div>
+	<div style="margin-top:10px">
+		<select onchange="setLayout(this.value)">
+			<option value="1">Previous Next</option>
+			<option value="2">Manual Page Input</option>
+			<option value="3">Numeric Links</option>
+			<option value="4">Previous Links Next</option>
+			<option value="5">Go To Page</option>
+		</select>
+	</div>
+	<script>
+		function setLayout(type){
+			var p = $('#pp');
+			switch(parseInt(type)){
+			case 1:
+				p.pagination({layout:['first','prev','next','last','info']});
+				break;
+			case 2:
+				p.pagination({
+					layout:['list','sep','first','prev','sep','manual','sep','next','last','sep','refresh'],
+					beforePageText:'Page',
+					afterPageText:'of {pages}'
+				});
+				break;
+			case 3:
+				p.pagination({layout:['links']});
+				break;
+			case 4:
+				p.pagination({layout:['first','prev','links','next','last']});
+				break;
+			case 5:
+				p.pagination({
+					layout:['first','prev','next','last','sep','links','sep','manual','info'],
+					beforePageText:'Go Page',
+					afterPageText:''
+				});
+				break;
+			}
+		}
+	</script>
+</body>
+</html>

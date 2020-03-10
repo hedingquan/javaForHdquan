@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Custom Calendar - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"63900",secure:"63905"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
+<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-19" data-genuitec-path="/hdquan2/WebRoot/js/jquery-easyui-1.8.2/demo/calendar/custom.html">
+	<h2 data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-19" data-genuitec-path="/hdquan2/WebRoot/js/jquery-easyui-1.8.2/demo/calendar/custom.html">Custom Calendar</h2>
+	<p>This example shows how to custom the calendar date by using 'formatter' function.</p>
+	<div style="margin:20px 0"></div>
+	
+	<div class="easyui-calendar" style="width:250px;height:250px;" data-options="formatter:formatDay"></div>
+			
+	<script>
+		var d1 = Math.floor((Math.random()*30)+1);
+		var d2 = Math.floor((Math.random()*30)+1);
+		function formatDay(date){
+			var m = date.getMonth()+1;
+			var d = date.getDate();
+			var opts = $(this).calendar('options');
+			if (opts.month == m && d == d1){
+				return '<div class="icon-ok md">' + d + '</div>';
+			} else if (opts.month == m && d == d2){
+				return '<div class="icon-search md">' + d + '</div>';
+			}
+			return d;
+		}
+	</script>
+	<style scoped="scoped">
+		.md{
+			height:16px;
+			line-height:16px;
+			background-position:2px center;
+			text-align:right;
+			font-weight:bold;
+			padding:0 2px;
+			color:red;
+		}
+	</style>
+</body>
+</html>

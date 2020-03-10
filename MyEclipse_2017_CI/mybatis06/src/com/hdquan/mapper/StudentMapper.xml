@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.hdquan.StudentMapper">
+	<resultMap type="student" id="stuMap">
+	<id property="id" column="id"/>
+	<result property="name" column="name"/>
+	<result property="age" column="age"/>
+	<result property="tid" column="tid"/>
+	<association property="teacher" select="com.hdquan.TeacherMapper.selById" column="tid"></association>
+	</resultMap>
+	<select id="selAll" resultMap="stuMap">
+	select * from student</select>
+<!-- 
+	<resultMap type="Student" id="stuMap1">
+	<id column="sid" property="id"/>
+	<result column="sname" property="name"/>
+	<result column="age" property="age"/>
+	<result column="tid" property="tid"/>
+	<association property="teacher" javaType="Teacher">
+	<id column="tid" property="id"/>
+	<result column="tname" property="name"/>
+	</association>
+	</resultMap>
+	<select id="selAll" resultMap="stuMap1">
+	select s.tid sid,s.name sname,s.age age,t.id tid,t.name tname from student s left outer join teacher</select>
+	 -->
+</mapper>

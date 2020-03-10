@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Cascade CheckBox in TreeGrid - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"63900",secure:"63905"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
+<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-260" data-genuitec-path="/hdquan3/WebRoot/js/jquery-easyui-1.8.2/demo/treegrid/checkbox.html">
+	<h2 data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-260" data-genuitec-path="/hdquan3/WebRoot/js/jquery-easyui-1.8.2/demo/treegrid/checkbox.html">Cascade CheckBox in TreeGrid</h2>
+	<p>TreeGrid nodes with cascade check boxes.</p>
+	<div style="margin:20px 0;"></div>
+	<table title="Folder Browser" class="easyui-treegrid" style="width:700px;height:250px"
+			data-options="
+				url: 'treegrid_data1.json',
+				method: 'get',
+				checkbox: true,
+				rownumbers: true,
+				idField: 'id',
+				treeField: 'name'
+			">
+		<thead>
+			<tr>
+				<th data-options="field:'name'" width="220">Name</th>
+				<th data-options="field:'size'" width="100" align="right">Size</th>
+				<th data-options="field:'date'" width="150">Modified Date</th>
+			</tr>
+		</thead>
+	</table>
+
+</body>
+</html>

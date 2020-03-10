@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 	package="com.hdquan.pojo">
+<!-- 映射哪个包的内容 -->
+
+	<class name="Employee" table="_employee" lazy="true">
+		<id name="empid">
+			<generator class="native"/>
+		</id>
+
+		<property name="ename" type="java.lang.String"	column="ename"/>
+			<many-to-one name="department" class="Department" cascade="save-update">
+			<column name="deptid"></column><!-- 外键 -->
+			</many-to-one>
+		</class>
+	
+</hibernate-mapping>

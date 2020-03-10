@@ -1,0 +1,16 @@
+[genuitec-file-id="wc1-652"],[genuitec-lp-path="/Hydropower_query_system/WebRoot/js/jquery-easyui-1.8.2/themes/ui-cupertino/splitbutton.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+.s-btn:hover .m-btn-line,
+.s-btn-active .m-btn-line,
+.s-btn-plain-active .m-btn-line {
+  display: inline-block;
+}
+.l-btn:hover .s-btn-downarrow,
+.s-btn-active .s-btn-downarrow,
+.s-btn-plain-active .s-btn-downarrow {
+  border-style: solid;
+  border-color: #AED0EA;
+  border-width: 0 0 0 1px;
+}

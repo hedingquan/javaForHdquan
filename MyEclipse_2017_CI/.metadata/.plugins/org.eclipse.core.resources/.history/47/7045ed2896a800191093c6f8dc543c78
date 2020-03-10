@@ -1,0 +1,18 @@
+package com.hdquan.Mapper;
+
+import javax.annotation.Resource;
+
+import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Repository;
+
+import com.hdquan.pojo.User;
+
+@Repository("NewUser")
+public class NewUser{
+	 @Resource(name="sessionFactory")
+	    private SessionFactory sessionFactory;
+	 
+	   public User save(User p){
+	        return (User) sessionFactory.getCurrentSession().save(p);
+	    }
+}

@@ -1,0 +1,15 @@
+[genuitec-file-id="wc1-6"],[genuitec-lp-path="/hdquan3/WebRoot/css/baseCss.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+.tableForm{
+	
+}
+.tableForm th
+{
+	text-align:right;
+}
+.tableForm td input{
+	width:150px;
+	text-align:left;
+}

@@ -1,0 +1,98 @@
+1573362463629	Delete element
+1573363994657	Copy file
+1573365389551	Delete element
+1573365851087	Copy file
+1573365855729	Delete element
+1573365889454	Rename resource 'myinfo.jsp'
+1573365899066	Copy file
+1573366073185	Rename resource 'myinfoSearch.jsp'
+1573366100805	Copy file
+1573366451126	Copy file
+1573366521732	Copy file
+1573366572302	Copy file
+1573366721871	Copy file
+1573366881409	Copy file
+1573367139400	Copy file
+1573367765237	Copy file
+1573368287737	Copy file
+1573368663279	Copy file
+1573369299045	Copy file
+1573369684380	Copy file
+1573369932903	Copy file
+1573370084109	Copy file
+1573370126406	Copy file
+1573370137733	Rename resource '1add_apply.jsp'
+1573370255700	Copy file
+1573370321643	Copy file
+1573370551514	Copy file
+1573370796069	Copy file
+1573371184591	Copy file
+1573371284704	Copy file
+1573371710318	Delete element
+1573372435314	Rename resource '1573372404(1).png'
+1573373608021	Rename type 'login'
+1573375673792	Rename type 'UserDao'
+1573378308659	Extract local variable 'currentSession'
+1573378772367	Extract local variable 'identify_user'
+1573379461163	Extract local variable 'identify_user'
+1573383172893	Extract local variable 'user'
+1573387046221	Extract local variable 'list'
+1573387407738	Extract local variable 'attribute'
+1573388181172	Extract local variable 'parameter'
+1573389097588	Extract local variable 'user'
+1573389599286	Rename resource 'orget_password.jsp'
+1573393972641	Extract local variable 'cuser'
+1573394541650	Extract local variable 'user_ID'
+1573396574441	Copy compilation unit
+1573396696192	Copy compilation unit
+1573396706240	Copy compilation unit
+1573396718484	Rename type 'WorkDao'
+1573396732858	Copy compilation unit
+1573429699627	Extract local variable 'user2'
+1573432623225	Extract local variable 'work'
+1573434447992	Extract local variable 'addWork'
+1573434513530	Extract local variable 'addWork'
+1573434558966	Extract local variable 'attribute'
+1573435001690	Extract local variable 'attribute'
+1573435972569	Copy compilation unit
+1573436032797	Copy compilation unit
+1573436049150	Rename type 'WorkDaoImpl2'
+1573436184966	Copy compilation unit
+1573436218473	Copy compilation unit
+1573436321065	Copy compilation unit
+1573438881737	Delete elements
+1573438889837	Delete elements
+1573438906731	Delete elements
+1573438921602	Delete element
+1573438928221	Delete element
+1573438936121	Delete element
+1573438940719	Delete element
+1573438946640	Delete elements
+1573438952438	Delete element
+1573438972632	Delete element
+1573438981916	Delete elements
+1573441490710	Extract local variable 'applyUser'
+1573442622862	Extract local variable 'allWork'
+1573443291296	Extract local variable 'cuser'
+1573468804086	Copy file
+1573468828340	Delete element
+1573468834903	Delete element
+1573471472403	Delete element
+1573472783728	Extract local variable 'work'
+1573473576116	Extract local variable 'allWork'
+1573474302188	Extract local variable 'myWork'
+1573475614824	Extract local variable 'myApply'
+1573481049673	Copy compilation unit
+1573481107317	Copy compilation unit
+1573481182372	Copy compilation unit
+1573481244204	Copy compilation unit
+1573481268053	Copy compilation unit
+1573482391645	Extract local variable 'format'
+1573483738302	Extract local variable 'myApply'
+1573625594137	Extract local variable 'attribute'
+1573639741881	Extract local variable 'fromObject'
+1573648743447	Extract local variable 'allApply'
+1573652755864	Extract local variable 'user'
+1573701426928	Extract local variable 'addApply'
+1573702724898	Extract local variable 'work'
+1573876840248	Delete element

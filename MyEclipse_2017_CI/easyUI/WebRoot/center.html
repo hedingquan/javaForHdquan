@@ -1,0 +1,141 @@
+<script type="text/javascript" charset="utf-8">
+
+	/* sy.ns('sy.admin.user'); */
+
+var dg;
+var editRow;
+	$(function(){
+	editRow=undefined;
+/* 		sy.admin.user.searchForm=$('#user_searchForm');
+		    sy.admin.user.datagrid */
+		    
+		    dg=$('#dg').datagrid({
+        url:'userAction!datagrid.action',//！表示调用userAction中的什么方法(datagrid方法).
+        iconCls:'icon-save',
+        pagination:true,
+        pageSize:10,
+        pageList:[10,20,30,40,50,60,70],
+        fit:true,
+        fitColums:true,
+        sortName:'name',
+        sortOrder:'desc',
+        columns:[[
+            {field:'id',title:'编号',width:100},
+            {field:'name',title:'姓名',width:100,sortable:true,editor:{type:'validatebox',options:{required:true}}},
+            {field:'password',title:'密码',width:100,align:'right'}
+     			   ]],
+	    toolbar:[{
+     			 text:'增加',
+     			 iconCls:'icon-add',
+     			 handler:function()
+     			 {
+     			 if(editRow!=undefined)
+     			 {
+     			 dg.datagrid('endEdit',editRow);
+     			 }
+     			 	/* dg.datagrid('appendRow',{
+					id:'',
+					name:'',
+					password:'',
+					});
+					var rows=dg.datagrid('getRows').length-1;
+					 	dg.datagrid('beginEdit',rows); */
+					
+					$('#dg').datagrid('insertRow',{
+						index: 0,	
+						row: {
+						id:UUID(),
+						name:'请输入名称',
+						password:'请输入密码',
+						}
+					});
+					dg.datagrid('beginEdit',0);
+					editRow=0;
+					
+     			 	}
+     			 },'-',{
+     			 text:'删除',
+     			 iconCls:'icon-remove',
+     			 handler:function()
+     			 {
+     			 
+     			 }
+     			 },'-',{
+     			 text:'修改',
+     			 iconCls:'icon-edit',
+     			 handler:function()
+     			 {
+     			 
+     			 }
+     			 },'-',{
+     			 text:'保存',
+     			 iconCls:'icon-save',
+     			 handler:function()
+     			 {
+     			  dg.datagrid('endEdit',editRow);
+     			 }
+     			 }],
+     			 
+     			 onAfterEdit:function(rowIndex,rowData,changes)
+     			 {
+     			 console.info(rowData);
+     			 }
+     /* 	toolbar: '#toolbar' */
+  					  });
+  					  
+  			 	/*   sy.admin.user.search=function(){
+  					  sy.admin.user.datagrid.datagrid('load',sy.serializeObject(sy.admin.user.searchForm));
+  							  	sy.admin.user.datagrid.datagrid('load',{
+								name:$('#user_searchForm').find('[name=name]').val();
+							});
+							
+  					  };
+  					  sy.admin.user.clear=function()
+  					  {
+  					   sy.admin.user.datagrid.datagrid('load',{});//传给后台空的对象,即查询全部信息
+  					   sy.admin.user.searchForm.find('input').val('');//将所有input置空
+  					  }; 
+  					  */
+	})
+</script>
+<div class="easyui-tabs" fit="true" title="用户管理" border="false">
+	<div title="用户管理" border="false">
+	<div class="easyui-layout" fit="true" border="false">
+		<div data-options="region:'north',title:'split:true" overflow:hidden;">
+			<form id="user_searchForm">
+				<table class="tableForm datagrid-toolbar" style="width:100%;height:100%">
+					<tr>
+						<th>用户名</th>
+						<td><input name="name" style="width:315px;"/></td>
+					</tr>
+					<tr>
+						<th>创建时间</th>
+						<td><input name="createdatatimeStart" class="easyui-datetimebox" style="width:155px;" editable="false"/>至<input name="createdatatimeEnd" class="easyui-datetimebox" style="width:155px;" editable="false"/></td>
+					</tr>
+					<tr>
+						<th>最后修改时间</th>
+						<td><input name="modifydatatimeStart" class="easyui-datetimebox" style="width:155px;" editable="false"/>至<input name="modifydatatimeEnd" class="easyui-datetimebox" style="width:155px;" editable="false"/>
+						<a href="javascript:void(0);" class="easyui-linkbutton" onclick="sy.admin.user.search();">查询</a>
+						<a href="javascript:void(0);" class="easyui-linkbutton" onclick="sy.admin.user.clear();">清空</a>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		 <div data-options="region:'center',title:'center title'" style="padding:5px;background:#eee;"></div>
+			<table id="dg">
+			</table>
+	</div>
+	</div>	
+</div>
+
+<!-- <div id="toolbar" style="height:100px;">
+<form>
+	用户名：<input/><br/>
+	创建时间:<input/>
+</form>
+<a class="easyui-linkbutton" plain="true">增加</a>
+<a class="easyui-linkbutton" plain="true">删除</a>
+<a class="easyui-linkbutton" plain="true">修改</a>
+<a class="easyui-linkbutton" plain="true">查询</a>
+</div> -->

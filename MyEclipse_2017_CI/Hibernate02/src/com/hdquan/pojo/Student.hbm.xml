@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 	package="com.hdquan.pojo">
+<!-- 映射哪个包的内容 -->
+
+	<class name="Student" table="_student" lazy="true">
+		<id name="id">
+			<generator class="native"/>
+		</id>
+		<property name="name"/>
+		<set name="courses" table="stu_course" cascade="save-update">
+			<key column="stuId"/>
+			<many-to-many class="Course" column="courseId"></many-to-many>
+		</set>
+	</class>
+	
+</hibernate-mapping>

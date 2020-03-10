@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html;" charset="UTF-8">
+  	<script type="text/javascript" src="js/jquery-easyui-1.8.2/jquery.min.js" charset="uft-8"></script> 
+  	<script type="text/javascript" src="js/jquery-easyui-1.8.2/jquery.easyui.min.js" charset="uft-8"></script>
+     <script type="text/javascript" src="js/jquery-easyui-1.8.2/locale/easyui-lang-zh_CN.js" charset="uft-8"></script> 
+   <link rel="stylesheet" href="js/jquery-easyui-1.8.2/themes/gray/easyui.css" type="text/css">
+    <link rel="stylesheet" href="js/jquery-easyui-1.8.2/themes/icon.css" type="text/css"> 
+<script type="text/javascript" charset="utf-8">
+	var login;
+	$(function(){
+	login=$('#login').dialog({
+	closable:false,
+	modal:true,
+	buttons:[{
+				text:'注册',
+				handler:function(){}
+			},{
+				text:'登录',
+				handler:function(){
+				//console.info('我点击登录了')
+				//console.info(sy.bp());
+					$.ajax({
+					url:'findUserByUserId.do?login',
+					data:{
+						name:$('#loginInputForm input[name=name]').val(),
+						password:$('#loginInputForm input[name=password]').val()
+					},
+					cache:false,
+					dataType:'json',
+					success:function(response)
+					{
+						console.info(response.msg);
+					}
+					
+					});
+				}
+			}]
+		});
+		
+		$('#cc').combo({
+                required:true,
+                editable:false,
+                label:'Language:',
+                labelPosition:'top'
+            });
+            $('#sp').appendTo($('#cc').combo('panel'));
+            $('#sp input').click(function(){
+                var v = $(this).val();
+                var s = $(this).next('span').text();
+                $('#cc').combo('setValue', v).combo('setText', s).combo('hidePanel');
+            });
+			});
+</script>
+ </head>
+  <body>
+  
+	<!-- <div id="login" title="用户登录" style="width:400px;height:200px;"
+        data-options="iconCls:'icon-save',resizable:true,modal:true">
+  		<form id="loginInputForm" method="post">
+	  		<table>
+	  		<tr>
+		  		<th>用户名：</th>
+		  			<td><input name="name"/></td>
+	  		</tr>
+	  		<tr>
+		  		<th>密码：</th>
+		  		 	<td><input name="password" type="password"/></td>
+	  		</tr>
+	  		</table>
+  		</form>
+	</div> -->
+	<div class="easyui-panel" style="width:100%;max-width:400px;padding:30px 60px;">
+        <div style="margin-bottom:20px">
+            <input id="cc" style="width:100%;">
+        </div>
+    </div>
+	<div id="sp">
+        <div style="line-height:22px;background:#fafafa;padding:5px;">Select a language</div>
+        <div style="padding:10px">
+            <input type="radio" name="lang" value="01"><span>Java</span><br/>
+            <input type="radio" name="lang" value="02"><span>C#</span><br/>
+            <input type="radio" name="lang" value="03"><span>Ruby</span><br/>
+            <input type="radio" name="lang" value="04"><span>Basic</span><br/>
+            <input type="radio" name="lang" value="05"><span>Fortran</span>
+        </div>
+    </div>
+  </body>
+</html>

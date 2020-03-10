@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Sat Feb 29 22:34:02 CST 2020
+org.eclipse.jst.jee.server\:flower1=C\:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps\\flower1
+org.eclipse.jst.jee.server\:Hydropower_query_system=C\:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps\\Hydropower_query_system

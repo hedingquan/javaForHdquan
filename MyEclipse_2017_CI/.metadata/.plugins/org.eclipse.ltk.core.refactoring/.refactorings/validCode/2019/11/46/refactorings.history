@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;c.tld&apos; to &apos;WEB-INF&apos;&#x0D;&#x0A;- Original project: &apos;validCode&apos;&#x0D;&#x0A;- Destination element: &apos;WEB-INF&apos;&#x0D;&#x0A;- Original element: &apos;c.tld&apos;" description="Copy file" element1="WebRoot/WEB-INF/c.tld" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1573468765632" target="/Campus_part-time_job_system1/WebRoot/WEB-INF" units="0" version="1.0"/>
+</session>

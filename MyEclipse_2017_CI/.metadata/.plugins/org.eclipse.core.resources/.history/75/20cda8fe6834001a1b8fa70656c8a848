@@ -1,0 +1,8 @@
+package com.hdquan.pojo;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Account {
+
+}

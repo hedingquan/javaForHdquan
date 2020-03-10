@@ -1,0 +1,17 @@
+[genuitec-file-id="wc1-623"],[genuitec-lp-path="/hdquan3/WebRoot/js/jquery-easyui-1.8.2/themes/metro/validatebox.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+.inputbox {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+}
+.validatebox-invalid {
+  border-color: #ffa8a8;
+  background-color: #fff3f3;
+  color: #000;
+}

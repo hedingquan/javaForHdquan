@@ -1,0 +1,4 @@
+1562583786164	Extract local variable 'res2'
+1562583899548	Extract local variable 'outputStream'
+1562584458727	Extract local variable 'file2'
+1562585103207	Extract local variable 'readFileToByteArray'

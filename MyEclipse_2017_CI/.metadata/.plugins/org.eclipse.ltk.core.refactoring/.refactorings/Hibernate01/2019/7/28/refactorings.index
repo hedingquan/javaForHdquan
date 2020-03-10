@@ -1,0 +1,18 @@
+1562923334312	Extract local variable 'buildSessionFactory'
+1562923354409	Extract local variable 'openSession'
+1562923758590	Delete elements
+1562925622598	Delete elements
+1562933447674	Extract local variable 'session'
+1562940756502	Copy file
+1562989966184	Rename resource 'Student.hbm2.xml'
+1562990136913	Copy compilation unit
+1562993089745	Copy file
+1562993463487	Copy compilation unit
+1562994178220	Copy file
+1562994317000	Copy compilation unit
+1562996960316	Copy file
+1563005612991	Delete element
+1563005622708	Delete element
+1563005677768	Delete element
+1563005687288	Delete element
+1563020754582	Copy files

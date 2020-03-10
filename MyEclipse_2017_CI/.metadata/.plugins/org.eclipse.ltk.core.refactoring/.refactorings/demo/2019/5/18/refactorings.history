@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract local variable &apos;result&apos; from expression &apos;req.getParameter(&quot;control&quot;)&apos;&#x0D;&#x0A;- Original project: &apos;demo&apos;&#x0D;&#x0A;- Variable name: &apos;result&apos;&#x0D;&#x0A;- Destination method: &apos;com.hdquan.servlet.DispatcherServlet.service()&apos;&#x0D;&#x0A;- Variable expression: &apos;req.getParameter(&quot;control&quot;)&apos;&#x0D;&#x0A;- Replace occurrences of expression with variable" description="Extract local variable &apos;result&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src&lt;com.hdquan.servlet{DispatcherServlet.java" name="result" replace="true" selection="499 0" stamp="1556860131150" version="1.0"/>
+</session>

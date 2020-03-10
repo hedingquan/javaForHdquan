@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Tabs Tools - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"63900",secure:"63905"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
+<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-215" data-genuitec-path="/Hydropower_query_system/WebRoot/js/jquery-easyui-1.8.2/demo/tabs/tabstools.html">
+	<h2 data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-215" data-genuitec-path="/Hydropower_query_system/WebRoot/js/jquery-easyui-1.8.2/demo/tabs/tabstools.html">Tabs Tools</h2>
+	<p>Click the buttons on the top right of tabs header to add or remove tab panel.</p>
+	<div style="margin:20px 0;"></div>
+	<div id="tt" class="easyui-tabs" data-options="tools:'#tab-tools'" style="width:700px;height:250px">
+	</div>
+	<div id="tab-tools">
+		<a href="javascript:void(0)" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-add'" onclick="addPanel()"></a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-remove'" onclick="removePanel()"></a>
+	</div>
+	<script type="text/javascript">
+		var index = 0;
+		function addPanel(){
+			index++;
+			$('#tt').tabs('add',{
+				title: 'Tab'+index,
+				content: '<div style="padding:10px">Content'+index+'</div>',
+				closable: true
+			});
+		}
+		function removePanel(){
+			var tab = $('#tt').tabs('getSelected');
+			if (tab){
+				var index = $('#tt').tabs('getTabIndex', tab);
+				$('#tt').tabs('close', index);
+			}
+		}
+	</script>
+</body>
+</html>

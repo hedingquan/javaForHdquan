@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 	package="com.hdquan.pojo">
+	<class name="Person" table="_person" lazy="true">
+		<id name="id">
+			<generator class="native"/>
+		</id>
+		<property name="name"/>
+		<!-- 组合关系映射（组键） -->
+			<component name="address" class="Address">
+				<property name="city"></property>
+				<property name="street"></property>
+				<property name="zipcode"></property>
+			</component>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,50 @@
+<Beans>
+    <Bean Class="com.genuitec.eclipse.sqlexplorer.utils.ConnectionProfile">
+        <activate>false</activate>
+        <driverIdentifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
+            <string>3bbff08a:16a2470ff23:-7fde</string>
+        </driverIdentifier>
+        <identifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
+            <string>3bbff08a:16a2470ff23:-7fdd</string>
+        </identifier>
+        <name>MyEclipse Derby</name>
+        <password encryption="true">gFOjO/OmrJ8m4/rtM2cMIw==</password>
+        <promptForPassword>false</promptForPassword>
+        <schema Indexed="true"/>
+        <schemaDisplayPolicy>0</schemaDisplayPolicy>
+        <url>jdbc:derby://localhost:1527/myeclipse</url>
+        <userName>classiccars</userName>
+    </Bean>
+    <Bean Class="com.genuitec.eclipse.sqlexplorer.utils.ConnectionProfile">
+        <activate>false</activate>
+        <driverIdentifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
+            <string>1773cddb:16be9717cba:-7f92</string>
+        </driverIdentifier>
+        <identifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
+            <string>1773cddb:16be9717cba:-7fd7</string>
+        </identifier>
+        <name>MySQL</name>
+        <password encryption="true"/>
+        <promptForPassword>true</promptForPassword>
+        <schema Indexed="true"/>
+        <schemaDisplayPolicy>0</schemaDisplayPolicy>
+        <url>jdbc:mysql://localhost:3306/hib</url>
+        <userName>root</userName>
+    </Bean>
+    <Bean Class="com.genuitec.eclipse.sqlexplorer.utils.ConnectionProfile">
+        <activate>false</activate>
+        <driverIdentifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
+            <string>-18700478:16a2a1e455a:-7f92</string>
+        </driverIdentifier>
+        <identifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
+            <string>-18700478:16a2a1e455a:-7fd7</string>
+        </identifier>
+        <name>SQL&#x2002;Server</name>
+        <password encryption="true">npW9O0tNxG5Y/gO136xLhg==</password>
+        <promptForPassword>false</promptForPassword>
+        <schema Indexed="true"/>
+        <schemaDisplayPolicy>0</schemaDisplayPolicy>
+        <url>jdbc:sqlserver://localhost:1433</url>
+        <userName>root</userName>
+    </Bean>
+</Beans>

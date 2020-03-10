@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 packages to &apos;001/src&apos;&#x0D;&#x0A;- Original project: &apos;mybatis&apos;&#x0D;&#x0A;- Destination element: &apos;001/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     mybatis/src/com.hdquan.mapper&#x0D;&#x0A;     mybatis/src/com.hdquan.pojo" description="Copy packages" destination="=001/src" element1="/src&lt;com.hdquan.mapper" element2="/src&lt;com.hdquan.pojo" flags="589830" fragments="2" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1556034335258" version="1.0"/>
+</session>
